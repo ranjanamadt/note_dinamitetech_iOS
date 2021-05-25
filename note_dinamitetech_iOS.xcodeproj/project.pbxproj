@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF2459BF265CD4C700D699BA /* NoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2459BB265CD4C600D699BA /* NoteVC.swift */; };
+		BF2459C0265CD4C700D699BA /* NotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2459BC265CD4C600D699BA /* NotesVC.swift */; };
+		BF2459C1265CD4C700D699BA /* CategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2459BD265CD4C600D699BA /* CategoriesVC.swift */; };
 		BF40E0AB265ACB1500733BD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF40E0AA265ACB1500733BD1 /* Main.storyboard */; };
 		BF55402F2654D6C9007F09BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF55402E2654D6C9007F09BC /* AppDelegate.swift */; };
 		BF5540312654D6C9007F09BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5540302654D6C9007F09BC /* SceneDelegate.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF2459BB265CD4C600D699BA /* NoteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteVC.swift; sourceTree = "<group>"; };
+		BF2459BC265CD4C600D699BA /* NotesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesVC.swift; sourceTree = "<group>"; };
+		BF2459BD265CD4C600D699BA /* CategoriesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesVC.swift; sourceTree = "<group>"; };
 		BF40E0AA265ACB1500733BD1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BF55402B2654D6C9007F09BC /* note_dinamitetech_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = note_dinamitetech_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF55402E2654D6C9007F09BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +45,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF2459C2265CD4E500D699BA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BF2459BD265CD4C600D699BA /* CategoriesVC.swift */,
+				BF2459BC265CD4C600D699BA /* NotesVC.swift */,
+				BF2459BB265CD4C600D699BA /* NoteVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		BF5540222654D6C9007F09BC = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +74,7 @@
 		BF55402D2654D6C9007F09BC /* note_dinamitetech_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				BF2459C2265CD4E500D699BA /* Controllers */,
 				BF40E0AA265ACB1500733BD1 /* Main.storyboard */,
 				BF55402E2654D6C9007F09BC /* AppDelegate.swift */,
 				BF5540302654D6C9007F09BC /* SceneDelegate.swift */,
@@ -142,7 +159,10 @@
 			files = (
 				BF5540392654D6C9007F09BC /* note_dinamitetech_iOS.xcdatamodeld in Sources */,
 				BF5540332654D6C9007F09BC /* ViewController.swift in Sources */,
+				BF2459C1265CD4C700D699BA /* CategoriesVC.swift in Sources */,
+				BF2459C0265CD4C700D699BA /* NotesVC.swift in Sources */,
 				BF55402F2654D6C9007F09BC /* AppDelegate.swift in Sources */,
+				BF2459BF265CD4C700D699BA /* NoteVC.swift in Sources */,
 				BF5540312654D6C9007F09BC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
