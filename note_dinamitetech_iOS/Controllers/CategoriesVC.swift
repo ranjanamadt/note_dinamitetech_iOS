@@ -34,7 +34,7 @@ class CategoriesVC: UITableViewController {
             let newCategory = Category(context: self.context)
             newCategory.catName = textField.text!
             self.categories.append(newCategory)
-            self.saveFolders()
+            self.saveCategory()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         // change the color of the cancel button action
@@ -92,7 +92,7 @@ class CategoriesVC: UITableViewController {
         if editingStyle == .delete {
             
             deleteCategory(category:  categories[indexPath.row])
-            saveFolders()
+            saveCategory()
             categories.remove(at: indexPath.row)
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -102,7 +102,7 @@ class CategoriesVC: UITableViewController {
     }
     //MARK: - core data interaction methods
     
-    /// load folder from core data
+    /// load categories  from core data
     func loadCategories() {
         let request: NSFetchRequest<Category> = Category.fetchRequest()
         
@@ -114,8 +114,8 @@ class CategoriesVC: UITableViewController {
         tableView.reloadData()
     }
     
-    /// save folders into core data
-    func saveFolders() {
+    /// save Categories into core data
+    func saveCategory() {
         do {
             try context.save()
             tableView.reloadData()
@@ -128,5 +128,14 @@ class CategoriesVC: UITableViewController {
         context.delete(category)
     }
     
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        let destination = segue.destination as! NotesVC
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destination.selectedCategory = categories[indexPath.row]
+        }
+    }
 
 }
