@@ -25,7 +25,7 @@ class NotesVC: UITableViewController , addNote{
         super.viewDidLoad()
         
         navigationItem.title = selectedCategory?.catName
-        //showSearchBar()
+        showSearchBar()
 
     }
     
@@ -105,6 +105,17 @@ class NotesVC: UITableViewController , addNote{
             print("Error saving the notes \(error.localizedDescription)")
         }
     }
+    //MARK: - show search bar func
+    func showSearchBar() {
+        searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Note"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        searchController.searchBar.searchTextField.textColor = .lightGray
+    }
+
+    
     
     //MARK: - Core data interaction functions
     
@@ -151,4 +162,33 @@ class NotesVC: UITableViewController , addNote{
 //        }
     }
 
+}
+
+//MARK: - search bar delegate methods
+extension NotesVC: UISearchBarDelegate {
+    
+    
+    /// search button on keypad functionality
+    /// - Parameter searchBar: search bar is passed to this function
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        // add predicate
+        let predicate = NSPredicate(format: "noteTitle CONTAINS[cd] %@", searchBar.text!)
+        loadNotes(predicate: predicate)
+    }
+    
+    
+    /// when the text in text bar is changed
+    /// - Parameters:
+    ///   - searchBar: search bar is passed to this function
+    ///   - searchText: the text that is written in the search bar
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            loadNotes()
+            
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
+        }
+    }
+    
 }

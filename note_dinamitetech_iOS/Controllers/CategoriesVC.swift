@@ -14,10 +14,13 @@ class CategoriesVC: UITableViewController {
     
     // create a context to work with core data
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+      
         loadCategories()
     }
     
@@ -77,7 +80,7 @@ class CategoriesVC: UITableViewController {
         cell.textLabel?.textColor = .lightGray
         cell.detailTextLabel?.textColor = .lightGray
         cell.detailTextLabel?.text = "\(categories[indexPath.row].notes?.count ?? 0)"
-        cell.imageView?.image = UIImage(systemName: "folder")
+       // cell.imageView?.image = UIImage(systemName: "folder")
         cell.selectionStyle = .none
         
         return cell
@@ -130,6 +133,7 @@ class CategoriesVC: UITableViewController {
         context.delete(category)
     }
     
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
@@ -141,3 +145,6 @@ class CategoriesVC: UITableViewController {
     }
 
 }
+
+
+
