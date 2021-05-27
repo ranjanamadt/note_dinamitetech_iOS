@@ -90,7 +90,7 @@ class NotesVC: UITableViewController , addNote{
         newNote.noteDescription=description
         newNote.category = selectedCategory
         // For Unique ID of note
-        newNote.noteId = Int32(newNote.objectID.hash)
+       // newNote.noteId = Int32(newNote.objectID.hash)
         
         
         saveNotes()
