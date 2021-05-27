@@ -7,7 +7,7 @@
 import UIKit
 import CoreData
 
-class NotesVC: UITableViewController {
+class NotesVC: UITableViewController , addNote{
     // create notes
     var notes = [Note]()
     var selectedCategory : Category? {
@@ -83,11 +83,16 @@ class NotesVC: UITableViewController {
     
     /// update note in core data
     /// - Parameter title: note's title
-    func updateNote(with title: String) {
+    func updateNote( title: String,descrption :String, category : String) {
         notes = []
         let newNote = Note(context: context)
         newNote.noteTitle = title
+        newNote.noteDescription=description
         newNote.category = selectedCategory
+        // For Unique ID of note
+        newNote.noteId = Int32(newNote.objectID.hash)
+        
+        
         saveNotes()
         loadNotes()
     }
@@ -123,6 +128,27 @@ class NotesVC: UITableViewController {
         }
         tableView.reloadData()
     }
-    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        if let destination = segue.destination as? AddNoteVC {
+            destination.delegate = self
+            
+            if let cell = sender as? UITableViewCell {
+                if let index = tableView.indexPath(for: cell)?.row {
+                   // destination.selectedNote = notes[index]
+                }
+            }
+        }
+        
+//        if let destination = segue.destination as? MoveToVC {
+//            if let index = tableView.indexPathsForSelectedRows {
+//                let rows = index.map {$0.row}
+//                destination.selectedNotes = rows.map {notes[$0]}
+//            }
+//        }
+    }
 
 }

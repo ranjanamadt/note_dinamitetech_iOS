@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF2459BF265CD4C700D699BA /* NoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2459BB265CD4C600D699BA /* NoteVC.swift */; };
+		BF2459BF265CD4C700D699BA /* AddNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2459BB265CD4C600D699BA /* AddNoteVC.swift */; };
 		BF2459C0265CD4C700D699BA /* NotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2459BC265CD4C600D699BA /* NotesVC.swift */; };
 		BF2459C1265CD4C700D699BA /* CategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2459BD265CD4C600D699BA /* CategoriesVC.swift */; };
 		BF40E0AB265ACB1500733BD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF40E0AA265ACB1500733BD1 /* Main.storyboard */; };
@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BF2459BB265CD4C600D699BA /* NoteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteVC.swift; sourceTree = "<group>"; };
+		BF2459BB265CD4C600D699BA /* AddNoteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNoteVC.swift; sourceTree = "<group>"; };
 		BF2459BC265CD4C600D699BA /* NotesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesVC.swift; sourceTree = "<group>"; };
 		BF2459BD265CD4C600D699BA /* CategoriesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesVC.swift; sourceTree = "<group>"; };
 		BF40E0AA265ACB1500733BD1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 			children = (
 				BF2459BD265CD4C600D699BA /* CategoriesVC.swift */,
 				BF2459BC265CD4C600D699BA /* NotesVC.swift */,
-				BF2459BB265CD4C600D699BA /* NoteVC.swift */,
+				BF2459BB265CD4C600D699BA /* AddNoteVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -162,7 +162,7 @@
 				BF2459C1265CD4C700D699BA /* CategoriesVC.swift in Sources */,
 				BF2459C0265CD4C700D699BA /* NotesVC.swift in Sources */,
 				BF55402F2654D6C9007F09BC /* AppDelegate.swift in Sources */,
-				BF2459BF265CD4C700D699BA /* NoteVC.swift in Sources */,
+				BF2459BF265CD4C700D699BA /* AddNoteVC.swift in Sources */,
 				BF5540312654D6C9007F09BC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

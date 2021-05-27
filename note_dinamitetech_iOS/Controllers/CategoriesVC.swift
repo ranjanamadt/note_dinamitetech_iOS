@@ -17,6 +17,8 @@ class CategoriesVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadCategories()
     }
     
     
