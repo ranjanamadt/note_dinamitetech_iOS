@@ -286,6 +286,7 @@
                     <navigationItem key="navigationItem" id="Ald-SX-gtQ"/>
                     <size key="freeformSize" width="375" height="750"/>
                     <connections>
+                        <outlet property="recordAudio" destination="Vlg-fH-haf" id="E4G-8P-jLR"/>
                         <outlet property="textFieldNoteDescription" destination="zw8-nY-e1Q" id="LZs-Ye-QTQ"/>
                         <outlet property="textFieldNoteTitle" destination="Qqz-34-tKP" id="yMg-vi-8hl"/>
                     </connections>

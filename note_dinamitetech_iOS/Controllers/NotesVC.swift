@@ -46,7 +46,11 @@ class NotesVC: UITableViewController , addNote{
         let cell = tableView.dequeueReusableCell(withIdentifier: "note_cell", for: indexPath)
         let note = notes[indexPath.row]
         cell.textLabel?.text = note.noteTitle
-        cell.textLabel?.textColor = .lightGray
+        cell.textLabel?.textColor = .black
+        
+        cell.detailTextLabel?.text = note.noteDescription
+        cell.detailTextLabel?.textColor = .black
+        
         
         let backgroundView = UIView()
         backgroundView.backgroundColor = .darkGray

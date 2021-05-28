@@ -77,8 +77,8 @@ class CategoriesVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "catgory_cell", for: indexPath)
         
         cell.textLabel?.text = categories[indexPath.row].catName
-        cell.textLabel?.textColor = .lightGray
-        cell.detailTextLabel?.textColor = .lightGray
+        cell.textLabel?.textColor = .black
+        cell.detailTextLabel?.textColor = .darkGray
         cell.detailTextLabel?.text = "\(categories[indexPath.row].notes?.count ?? 0)"
        // cell.imageView?.image = UIImage(systemName: "folder")
         cell.selectionStyle = .none
