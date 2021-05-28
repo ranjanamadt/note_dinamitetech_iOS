@@ -45,8 +45,12 @@ class NoteDetailViewController: UIViewController {
     
     @IBAction func onPlayClick(_ sender: UIButton) {
         
-        let name = recorder.getRecordings[0]
-        recorder.play(name: name)
-    
+        let tempRecordCount = recorder.getRecordings.count
+        var name = ""
+        if(tempRecordCount>0){
+            name = recorder.getRecordings[tempRecordCount-1] // FileName
+            recorder.play(name: name)
+
+        }    
     }
 }
