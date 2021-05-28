@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48BB0B8D2660E0CC00D45895 /* MoveToVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB0B8C2660E0CC00D45895 /* MoveToVC.swift */; };
 		BF2459BF265CD4C700D699BA /* AddNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2459BB265CD4C600D699BA /* AddNoteVC.swift */; };
 		BF2459C0265CD4C700D699BA /* NotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2459BC265CD4C600D699BA /* NotesVC.swift */; };
 		BF2459C1265CD4C700D699BA /* CategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2459BD265CD4C600D699BA /* CategoriesVC.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48BB0B8C2660E0CC00D45895 /* MoveToVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveToVC.swift; sourceTree = "<group>"; };
 		BF2459BB265CD4C600D699BA /* AddNoteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNoteVC.swift; sourceTree = "<group>"; };
 		BF2459BC265CD4C600D699BA /* NotesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesVC.swift; sourceTree = "<group>"; };
 		BF2459BD265CD4C600D699BA /* CategoriesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesVC.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 				BF2459BC265CD4C600D699BA /* NotesVC.swift */,
 				BF2459BB265CD4C600D699BA /* AddNoteVC.swift */,
 				BF4975BD265FCD40009CA85E /* NoteDetailViewController.swift */,
+				48BB0B8C2660E0CC00D45895 /* MoveToVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48BB0B8D2660E0CC00D45895 /* MoveToVC.swift in Sources */,
 				BF5540392654D6C9007F09BC /* note_dinamitetech_iOS.xcdatamodeld in Sources */,
 				BF4975BE265FCD40009CA85E /* NoteDetailViewController.swift in Sources */,
 				BF5540332654D6C9007F09BC /* ViewController.swift in Sources */,
