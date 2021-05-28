@@ -215,7 +215,7 @@
                                                                 </constraints>
                                                                 <state key="normal" image="ic_add_audio"/>
                                                                 <connections>
-                                                                    <action selector="onRecordVoiceClick:" destination="cK0-kq-hhW" eventType="touchUpInside" id="52O-h1-vCg"/>
+                                                                    <action selector="onRecordClick:" destination="cK0-kq-hhW" eventType="touchUpInside" id="fci-Iq-Yhg"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NF0-rx-aCi">
@@ -435,9 +435,6 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ea7-LU-RqA">
                                                                 <rect key="frame" x="320.66666666666669" y="315" width="33.333333333333314" height="33.333333333333314"/>
                                                                 <state key="normal" image="ic_add_audio"/>
-                                                                <connections>
-                                                                    <action selector="onRecordVoiceClick:" destination="cK0-kq-hhW" eventType="touchUpInside" id="n7x-1k-RkY"/>
-                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpX-Pc-1Qt">
                                                                 <rect key="frame" x="20" y="42.333333333333343" width="354" height="40"/>

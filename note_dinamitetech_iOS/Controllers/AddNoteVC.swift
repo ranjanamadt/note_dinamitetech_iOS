@@ -8,7 +8,7 @@ import UIKit
 import AVFoundation
 
 protocol addNote {
-    func updateNote( title: String,descrption :String)
+    func updateNote( title: String,descrption :String, recording:String)
 }
 
 class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
@@ -25,6 +25,9 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
     var audioRecorder: AVAudioRecorder!
     
     var player = AVAudioPlayer()
+    
+    var recorder = AudioRecorderHelper.shared
+    
     // timer to update my scrubber
     var timer = Timer()
     // we need to access to the audio path
@@ -56,7 +59,18 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
     }
     @IBAction func onUploadImageClick(_ sender: Any) {
     }
-    @IBAction func onRecordVoiceClick(_ sender: Any) {
+   
+    @IBAction func onRecordClick(_ sender: UIButton) {
+        
+        if recorder.isRecording{
+            
+            recorder.stopRecording()
+           
+        } else{
+           //sender.image = UIImage(systemName: "pause.fill")
+            recorder.record()
+           
+        }
     }
     
     @IBAction func onDoneClick(_ sender: Any) {
@@ -67,7 +81,7 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
         print(audioURL)
         
         if(noteTitle != "" || noteDescription != "" ){
-            delegate?.updateNote(title: noteTitle, descrption: noteDescription)
+            delegate?.updateNote(title: noteTitle, descrption: noteDescription, recording: audioURL)
         }
 
         self.dismiss(animated: false, completion: nil)
@@ -85,19 +99,23 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
     
     @IBAction func onPlayCLick(_ sender: Any) {
 
+        let name = recorder.getRecordings[0]    // FileName
+        recorder.play(name: name)
+        audioURL=name
         
-        if player.isPlaying {
-            //playBtn.image = UIImage(systemName: "play.fill")
-            player.pause()
-    //            isPlaying = false
-            timer.invalidate()
-            
-        } else {
-          //  playBtn.image = UIImage(systemName: "pause.fill")
-            player.play()
-    //            isPlaying = true
-            //timer  = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateScrubber), userInfo: nil, repeats: true)
-        }
+        
+//        if player.isPlaying {
+//            //playBtn.cc
+//            player.pause()
+//    //            isPlaying = false
+//            timer.invalidate()
+//
+//        } else {
+//          //  playBtn.image = UIImage(systemName: "pause.fill")
+//            player.play()
+//    //            isPlaying = true
+//            //timer  = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateScrubber), userInfo: nil, repeats: true)
+//        }
     
     }
     

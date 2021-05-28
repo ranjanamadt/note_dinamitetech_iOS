@@ -10,6 +10,7 @@
 		BF2459BF265CD4C700D699BA /* AddNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2459BB265CD4C600D699BA /* AddNoteVC.swift */; };
 		BF2459C0265CD4C700D699BA /* NotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2459BC265CD4C600D699BA /* NotesVC.swift */; };
 		BF2459C1265CD4C700D699BA /* CategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2459BD265CD4C600D699BA /* CategoriesVC.swift */; };
+		BF409CC82660BD8100B2B8A9 /* AudioRecorderHeldper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF409CC72660BD8100B2B8A9 /* AudioRecorderHeldper.swift */; };
 		BF40E0AB265ACB1500733BD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF40E0AA265ACB1500733BD1 /* Main.storyboard */; };
 		BF4975BE265FCD40009CA85E /* NoteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4975BD265FCD40009CA85E /* NoteDetailViewController.swift */; };
 		BF55402F2654D6C9007F09BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF55402E2654D6C9007F09BC /* AppDelegate.swift */; };
@@ -24,6 +25,7 @@
 		BF2459BB265CD4C600D699BA /* AddNoteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNoteVC.swift; sourceTree = "<group>"; };
 		BF2459BC265CD4C600D699BA /* NotesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesVC.swift; sourceTree = "<group>"; };
 		BF2459BD265CD4C600D699BA /* CategoriesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesVC.swift; sourceTree = "<group>"; };
+		BF409CC72660BD8100B2B8A9 /* AudioRecorderHeldper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecorderHeldper.swift; sourceTree = "<group>"; };
 		BF40E0AA265ACB1500733BD1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BF4975BD265FCD40009CA85E /* NoteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailViewController.swift; sourceTree = "<group>"; };
 		BF55402B2654D6C9007F09BC /* note_dinamitetech_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = note_dinamitetech_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +79,7 @@
 		BF55402D2654D6C9007F09BC /* note_dinamitetech_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				BF409CC72660BD8100B2B8A9 /* AudioRecorderHeldper.swift */,
 				BF2459C2265CD4E500D699BA /* Controllers */,
 				BF40E0AA265ACB1500733BD1 /* Main.storyboard */,
 				BF55402E2654D6C9007F09BC /* AppDelegate.swift */,
@@ -166,6 +169,7 @@
 				BF2459C1265CD4C700D699BA /* CategoriesVC.swift in Sources */,
 				BF2459C0265CD4C700D699BA /* NotesVC.swift in Sources */,
 				BF55402F2654D6C9007F09BC /* AppDelegate.swift in Sources */,
+				BF409CC82660BD8100B2B8A9 /* AudioRecorderHeldper.swift in Sources */,
 				BF2459BF265CD4C700D699BA /* AddNoteVC.swift in Sources */,
 				BF5540312654D6C9007F09BC /* SceneDelegate.swift in Sources */,
 			);

@@ -87,13 +87,13 @@ class NotesVC: UITableViewController , addNote{
     
     /// update note in core data
     /// - Parameter title: note's title
-    func updateNote( title: String,descrption :String) {
+    func updateNote( title: String,descrption :String, recording:String) {
         notes = []
         let newNote = Note(context: context)
         newNote.noteTitle = title
         newNote.noteDescription = descrption
         newNote.category = selectedCategory
-      
+        newNote.noteRecording=recording
         saveNotes()
         loadNotes()
     }
