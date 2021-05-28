@@ -7,6 +7,8 @@
 
 import UIKit
 import CoreData
+import AVFoundation
+
 
 class NoteDetailViewController: UIViewController {
     
@@ -42,8 +44,8 @@ class NoteDetailViewController: UIViewController {
     
     @IBAction func onPlayClick(_ sender: UIButton) {
         
-      
-        recorder.play(name: (selectedNote?.noteRecording)!)
+        let name = recorder.getRecordings[0]
+        recorder.play(name: name)
     
     }
 }

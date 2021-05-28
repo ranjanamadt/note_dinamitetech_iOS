@@ -9,9 +9,7 @@ import CoreData
 
 class NotesVC: UITableViewController , addNote{
    
-   
-    
-    
+
     @IBOutlet weak var trashBtn: UIBarButtonItem!
     @IBOutlet weak var moveBtn: UIBarButtonItem!
     
@@ -38,6 +36,14 @@ class NotesVC: UITableViewController , addNote{
         
         navigationItem.title = selectedCategory?.catName
         showSearchBar()
+    }
+    
+    //MARK : - TableView Reload Data After Add Notes
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.notes.removeAll()
+        self.tableView.reloadData()
+        loadNotes()
     }
     
     @IBAction func buttonSortByDate(_ sender: UIBarButtonItem) {
@@ -75,9 +81,6 @@ class NotesVC: UITableViewController , addNote{
         backgroundView.backgroundColor = .darkGray
         cell.selectedBackgroundView = backgroundView
         
-      
-
-
         return cell
     }
     

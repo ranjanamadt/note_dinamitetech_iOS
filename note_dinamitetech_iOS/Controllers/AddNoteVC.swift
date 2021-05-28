@@ -41,7 +41,7 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        self.hideKeyboardWhenTappedAround()
         
     }
     @IBAction func onUploadImageClick(_ sender: Any) {
@@ -120,5 +120,17 @@ extension AddNoteVC: ImagePickerDelegate {
             return
         }
         self.imageView.image = image
+    }
+}
+
+extension AddNoteVC {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(AddNoteVC.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
