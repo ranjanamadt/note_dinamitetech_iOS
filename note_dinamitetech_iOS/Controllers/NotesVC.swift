@@ -8,6 +8,11 @@ import UIKit
 import CoreData
 
 class NotesVC: UITableViewController , addNote{
+    
+    @IBOutlet weak var trashBtn: UIBarButtonItem!
+    @IBOutlet weak var moveBtn: UIBarButtonItem!
+    
+    
     // create notes
     var notes = [Note]()
     var selectedCategory : Category? {
@@ -191,7 +196,42 @@ class NotesVC: UITableViewController , addNote{
             }
         }
     }
+    //MARK: - Action methods
+    
+    /// trash bar button functionality
+    /// - Parameter sender: bar button
+    
+    
+    @IBAction func trashBtnPressed(_ sender: UIBarButtonItem) {
+        if let indexPaths = tableView.indexPathsForSelectedRows {
+            let rows = (indexPaths.map {$0.row}).sorted(by: >)
+            
+            let _ = rows.map {deleteNote(note: notes[$0])}
+            let _ = rows.map {notes.remove(at: $0)}
+            
+            tableView.reloadData()
+            saveNotes()
+        }
+    }
+    
+    
+    /// editing option functionality - when three dots is pressed this function is executed
+    /// - Parameter sender: bar button
+    
+    @IBAction func editingBtnPressed(_ sender: UIBarButtonItem) {
+        deletingMovingOption = !deletingMovingOption
+        
+        trashBtn.isEnabled = !trashBtn.isEnabled
+        moveBtn.isEnabled = !moveBtn.isEnabled
+        
+        tableView.setEditing(deletingMovingOption, animated: true)
+        
+    }
+    
+    
 
+    
+    
     
     @IBAction func unwindToNoteTVC(_ unwindSegue: UIStoryboardSegue) {
 //        let sourceViewController = unwindSegue.source
