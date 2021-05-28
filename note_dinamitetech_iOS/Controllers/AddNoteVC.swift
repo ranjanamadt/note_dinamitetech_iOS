@@ -55,8 +55,6 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
         if recorder.isRecording{
             sender.setImage(UIImage(named: "ic_add_audio.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
             recorder.stopRecording()
-            let audioURL = AudioRecorderHelper.shared.getDocumentsDirectory()
-            print(audioURL.absoluteString)
 
         } else{
             
@@ -102,17 +100,12 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
     
     @IBAction func onNotesClick(_ sender: UIButton) {
         self.dismiss(animated: false, completion: nil)
-        
-        
     }
     
     
     @IBAction func onPlayCLick(_ sender: Any) {
-        
         let name = recorder.getRecordings[0]    // FileName
-        recorder.play(name: name)
-        audioURL=name
-  
+        recorder.play(name: audioURL+name)
     }
 }
 

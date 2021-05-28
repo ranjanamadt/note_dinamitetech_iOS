@@ -43,7 +43,7 @@ class NotesVC: UITableViewController , addNote{
         super.viewWillAppear(animated)
         self.notes.removeAll()
         self.tableView.reloadData()
-        loadNotes()
+        loadNotes(sortByDate: true, sortByTitle: true)
     }
     
     @IBAction func buttonSortByDate(_ sender: UIBarButtonItem) {
