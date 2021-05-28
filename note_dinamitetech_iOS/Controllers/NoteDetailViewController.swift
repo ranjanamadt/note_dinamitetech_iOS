@@ -30,6 +30,8 @@ class NoteDetailViewController: UIViewController {
         categoryTxt.text = selectedNote?.category?.catName
         
         descpTxt.text = selectedNote?.noteDescription
+        
+        imageView.image = UIImage(named: selectedNote?.noteImage ?? "")
     }
     
 

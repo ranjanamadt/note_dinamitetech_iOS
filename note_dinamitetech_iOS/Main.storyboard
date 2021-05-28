@@ -423,6 +423,7 @@
                     <connections>
                         <outlet property="categoryTxt" destination="esW-sk-m8I" id="TDO-DM-Tzn"/>
                         <outlet property="descpTxt" destination="d48-vY-K3X" id="I3U-fN-ly3"/>
+                        <outlet property="imageView" destination="aUK-hr-zhc" id="jVs-qk-gMG"/>
                         <outlet property="titleTxt" destination="pWo-4p-NQl" id="BU4-HK-4zQ"/>
                     </connections>
                 </viewController>
