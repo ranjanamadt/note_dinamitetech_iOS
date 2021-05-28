@@ -104,7 +104,11 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
     
     
     @IBAction func onPlayCLick(_ sender: Any) {
-        let name = recorder.getRecordings[0]    // FileName
+        let tempRecordCount = recorder.getRecordings.count
+        var name = ""
+        if(tempRecordCount>0){
+            name = recorder.getRecordings[tempRecordCount-1] // FileName
+        }
         recorder.play(name: audioURL+name)
     }
 }
