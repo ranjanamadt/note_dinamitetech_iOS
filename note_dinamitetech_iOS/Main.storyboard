@@ -218,6 +218,13 @@
                                                                     <action selector="onRecordVoiceClick:" destination="cK0-kq-hhW" eventType="touchUpInside" id="52O-h1-vCg"/>
                                                                 </connections>
                                                             </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NF0-rx-aCi">
+                                                                <rect key="frame" x="0.0" y="257.66666666666669" width="30" height="30"/>
+                                                                <state key="normal" title="Play"/>
+                                                                <connections>
+                                                                    <action selector="onPlayCLick:" destination="cK0-kq-hhW" eventType="touchUpInside" id="qq6-Bd-rL4"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
@@ -227,12 +234,14 @@
                                                             <constraint firstItem="Vlg-fH-haf" firstAttribute="top" secondItem="zw8-nY-e1Q" secondAttribute="bottom" constant="20" id="DtQ-Yf-hTC"/>
                                                             <constraint firstAttribute="trailing" secondItem="zw8-nY-e1Q" secondAttribute="trailing" id="EPr-JH-zVF"/>
                                                             <constraint firstAttribute="trailing" secondItem="Qqz-34-tKP" secondAttribute="trailing" id="HdC-Ae-X51"/>
+                                                            <constraint firstItem="NF0-rx-aCi" firstAttribute="top" secondItem="zw8-nY-e1Q" secondAttribute="bottom" constant="20" id="JN1-Ls-cLM"/>
                                                             <constraint firstItem="iV3-t9-KZh" firstAttribute="top" secondItem="Qqz-34-tKP" secondAttribute="bottom" constant="20" id="dB6-wm-kxm"/>
                                                             <constraint firstItem="Qqz-34-tKP" firstAttribute="top" secondItem="7fU-qG-Mk8" secondAttribute="bottom" constant="10" id="h4Y-Pk-eHZ"/>
                                                             <constraint firstItem="zw8-nY-e1Q" firstAttribute="leading" secondItem="tPg-5D-idX" secondAttribute="leading" id="k3P-hC-GhW"/>
                                                             <constraint firstItem="Qqz-34-tKP" firstAttribute="leading" secondItem="tPg-5D-idX" secondAttribute="leading" id="nNC-UO-NG1"/>
                                                             <constraint firstAttribute="trailing" secondItem="Vlg-fH-haf" secondAttribute="trailing" constant="20" id="o31-uc-Xp7"/>
                                                             <constraint firstItem="7fU-qG-Mk8" firstAttribute="top" secondItem="tPg-5D-idX" secondAttribute="top" id="tSM-vY-gAz"/>
+                                                            <constraint firstItem="NF0-rx-aCi" firstAttribute="leading" secondItem="tPg-5D-idX" secondAttribute="leading" id="vQj-YT-Sbm"/>
                                                             <constraint firstItem="7fU-qG-Mk8" firstAttribute="leading" secondItem="tPg-5D-idX" secondAttribute="leading" id="xYA-ri-cOo"/>
                                                         </constraints>
                                                     </view>

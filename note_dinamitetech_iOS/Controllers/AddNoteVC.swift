@@ -24,6 +24,14 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
     
+    var player = AVAudioPlayer()
+    // timer to update my scrubber
+    var timer = Timer()
+    // we need to access to the audio path
+    
+    var audioURL=""
+    var path = Bundle.main.path(forResource: "documents", ofType: "recording.m4a")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,7 +64,7 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
         let noteTitle = textFieldNoteTitle.text ?? ""
         let noteDescription = textFieldNoteDescription.text ?? ""
      
-        
+        print(audioURL)
         
         if(noteTitle != "" || noteDescription != "" ){
             delegate?.updateNote(title: noteTitle, descrption: noteDescription)
@@ -70,8 +78,30 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
     @IBAction func onNotesClick(_ sender: UIButton) {
         self.dismiss(animated: false, completion: nil)
         
+        
+        
     }
     
+    
+    @IBAction func onPlayCLick(_ sender: Any) {
+
+        
+        if player.isPlaying {
+            //playBtn.image = UIImage(systemName: "play.fill")
+            player.pause()
+    //            isPlaying = false
+            timer.invalidate()
+            
+        } else {
+          //  playBtn.image = UIImage(systemName: "pause.fill")
+            player.play()
+    //            isPlaying = true
+            //timer  = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateScrubber), userInfo: nil, repeats: true)
+        }
+    
+    }
+    
+ 
     func loadRecordingUI() {
         recordAudio.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
     
@@ -79,6 +109,8 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
     
     func startRecording() {
         let audioFilename = getDocumentsDirectory().appendingPathComponent("recording.m4a")
+        
+        audioURL=audioFilename.absoluteString
 
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
@@ -127,4 +159,7 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
             finishRecording(success: false)
         }
     }
+    
+    
+    
 }
