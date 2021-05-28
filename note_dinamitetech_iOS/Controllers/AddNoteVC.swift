@@ -55,6 +55,9 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
         if recorder.isRecording{
             sender.setImage(UIImage(named: "ic_add_audio.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
             recorder.stopRecording()
+            let audioURL = AudioRecorderHelper.shared.getDocumentsDirectory()
+            print(audioURL.absoluteString)
+
         } else{
             
             sender.setImage(UIImage(named: "ic_stop.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
@@ -134,3 +137,4 @@ extension AddNoteVC {
         view.endEditing(true)
     }
 }
+
