@@ -21,9 +21,9 @@ class NoteDetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
 //
-//        titleTxt.text = selectedNote?.noteTitle
-//        descpTxt.text = selectedNote?.noteDescription
-//        categoryTxt.text = selectedNote?.category?.catName
+        titleTxt.text = selectedNote?.noteTitle
+        descpTxt.text = selectedNote?.noteDescription
+        categoryTxt.text = selectedNote?.category?.catName
     }
     
 
@@ -39,7 +39,6 @@ class NoteDetailViewController: UIViewController {
 //
 //    @IBAction func cancel(_ sender: Any) {
 //
-//        dismiss(animated: true, completion: nil)
 //
 //    }
 }
