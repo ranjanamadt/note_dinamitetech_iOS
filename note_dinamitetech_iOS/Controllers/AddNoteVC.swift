@@ -73,11 +73,11 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
         
         let date = Date()
         let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
         let result = formatter.string(from: date)
         print(result)
 
         var data = ""
-        
         if imageView.image != nil {
             let imageData = imageView.image!.jpegData(compressionQuality: 0.5)
             var imageBase64String = imageData?.base64EncodedString()

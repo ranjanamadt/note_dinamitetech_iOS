@@ -30,7 +30,14 @@ class NotesVC: UITableViewController , addNote{
         
         navigationItem.title = selectedCategory?.catName
         showSearchBar()
-
+        fetchData()
+    }
+    
+    func fetchData() {
+        
+//        notes = notes..sorted{ $0 < $1 }
+//        yourTableView.reloadData()
+        
     }
     
     // MARK: - Table view data source
@@ -59,6 +66,9 @@ class NotesVC: UITableViewController , addNote{
         let backgroundView = UIView()
         backgroundView.backgroundColor = .darkGray
         cell.selectedBackgroundView = backgroundView
+        
+      
+
 
         return cell
     }

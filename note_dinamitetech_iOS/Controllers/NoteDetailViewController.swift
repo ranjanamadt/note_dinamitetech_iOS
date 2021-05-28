@@ -37,11 +37,7 @@ class NoteDetailViewController: UIViewController {
     }
     
     @IBAction func cancel(_ sender: Any) {
-        
-        
         dismiss(animated: true, completion: nil)
-
-
     }
     
     @IBAction func onPlayClick(_ sender: UIButton) {
