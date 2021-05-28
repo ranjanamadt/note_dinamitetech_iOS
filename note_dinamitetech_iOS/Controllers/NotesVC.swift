@@ -8,6 +8,9 @@ import UIKit
 import CoreData
 
 class NotesVC: UITableViewController , addNote{
+   
+   
+    
     
     @IBOutlet weak var trashBtn: UIBarButtonItem!
     @IBOutlet weak var moveBtn: UIBarButtonItem!
@@ -66,7 +69,7 @@ class NotesVC: UITableViewController , addNote{
         
         cell.detailTextLabel?.text = note.noteCurrentDate
         cell.detailTextLabel?.textColor = .black
-        print(note.noteCurrentDate)
+        //print(note.noteCurrentDate)
         
         let backgroundView = UIView()
         backgroundView.backgroundColor = .darkGray
@@ -106,7 +109,7 @@ class NotesVC: UITableViewController , addNote{
     
     /// update note in core data
     /// - Parameter title: note's title
-    func updateNote( title: String,descrption :String, recording:String , currentDate : String , image : String) {
+    func updateNote(title: String, descrption: String, recording: String, currentDate: String, image: String) {
         notes = []
         let newNote = Note(context: context)
         newNote.noteTitle = title
@@ -152,7 +155,7 @@ class NotesVC: UITableViewController , addNote{
     
     /// load notes deom core data
     /// - Parameter predicate: parameter comming from search bar - by default is nil
-    func loadNotes(predicate: NSPredicate? = nil) {
+    func loadNotes(predicate: NSPredicate? = nil ) {
         let request: NSFetchRequest<Note> = Note.fetchRequest()
         let folderPredicate = NSPredicate(format: "category.catName=%@", selectedCategory!.catName!)
         request.sortDescriptors = [NSSortDescriptor(key: "noteTitle", ascending: true)]
@@ -162,9 +165,10 @@ class NotesVC: UITableViewController , addNote{
         } else {
             request.predicate = folderPredicate
         }
-        
+    
         do {
             notes = try context.fetch(request)
+            
         } catch {
             print("Error loading notes \(error.localizedDescription)")
         }

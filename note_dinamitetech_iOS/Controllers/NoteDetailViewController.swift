@@ -26,7 +26,7 @@ class NoteDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
 
         titleTxt.text = selectedNote?.noteTitle
-       
+
         categoryTxt.text = selectedNote?.category?.catName
         
         descpTxt.text = selectedNote?.noteDescription
@@ -41,6 +41,9 @@ class NoteDetailViewController: UIViewController {
     }
     
     @IBAction func onPlayClick(_ sender: UIButton) {
+        
+      
         recorder.play(name: (selectedNote?.noteRecording)!)
+    
     }
 }
