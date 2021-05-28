@@ -8,7 +8,7 @@ import UIKit
 import AVFoundation
 
 protocol addNote {
-    func updateNote( title: String,descrption :String, recording:String ,currentDate :String )
+    func updateNote( title: String,descrption :String, recording:String ,currentDate :String, image : String )
 }
 
 class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
@@ -74,11 +74,22 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
         let date = Date()
         let formatter = DateFormatter()
         let result = formatter.string(from: date)
-      
-        
         print(result)
+
+        var data = ""
+        
+        if imageView.image != nil {
+            let imageData = imageView.image!.jpegData(compressionQuality: 0.5)
+            var imageBase64String = imageData?.base64EncodedString()
+            print(imageBase64String ?? "Could not encode image to Base64")
+            imageBase64String = "" + imageBase64String!
+            data = imageBase64String!
+        } else {
+        }
+        
+        
         if(noteTitle != "" || noteDescription != "" ){
-            delegate?.updateNote(title: noteTitle, descrption: noteDescription, recording: audioURL, currentDate : result)
+            delegate?.updateNote(title: noteTitle, descrption: noteDescription, recording: audioURL, currentDate : result , image: data)
         }
 
         self.dismiss(animated: false, completion: nil)

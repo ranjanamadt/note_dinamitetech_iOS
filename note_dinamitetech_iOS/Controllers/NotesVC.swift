@@ -87,7 +87,7 @@ class NotesVC: UITableViewController , addNote{
     
     /// update note in core data
     /// - Parameter title: note's title
-    func updateNote( title: String,descrption :String, recording:String , currentDate : String) {
+    func updateNote( title: String,descrption :String, recording:String , currentDate : String , image : String) {
         notes = []
         let newNote = Note(context: context)
         newNote.noteTitle = title
@@ -95,6 +95,7 @@ class NotesVC: UITableViewController , addNote{
         newNote.category = selectedCategory
         newNote.noteRecording=recording
         newNote.noteCurrentDate=currentDate
+        newNote.noteImage=image
         saveNotes()
         loadNotes()
     }
