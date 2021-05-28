@@ -39,6 +39,7 @@ class NoteDetailViewController: UIViewController {
     }
     
     @IBAction func cancel(_ sender: Any) {
+        recorder.stopPlaying()
         dismiss(animated: true, completion: nil)
     }
     
