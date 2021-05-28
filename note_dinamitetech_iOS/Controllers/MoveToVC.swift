@@ -12,6 +12,7 @@ class MoveToVC: UIViewController {
 
     var categories = [Category]()
     var selectedNotes: [Note]? {
+        //observer
         didSet {
             loadCategories()
             
