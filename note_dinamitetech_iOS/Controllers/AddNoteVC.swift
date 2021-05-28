@@ -17,6 +17,10 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
     @IBOutlet weak var textFieldNoteTitle: UITextField!
     @IBOutlet weak var textFieldNoteDescription: UITextField!
     
+    var imagePicker: ImagePicker!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imagePickerButton: UIButton!
+    
     @IBOutlet weak var recordAudio: UIButton!
     var delegate : addNote? = nil
 
@@ -41,6 +45,9 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
         
     }
     @IBAction func onUploadImageClick(_ sender: Any) {
+        self.imagePicker = ImagePicker(presentationController: self, delegate: self)
+        self.imagePicker.present(from: sender as! UIView)
+        self.imagePickerButton.setImage(UIImage(named: ""), for: .normal)
     }
    
     @IBAction func onRecordClick(_ sender: UIButton) {
@@ -93,8 +100,14 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
         audioURL=name
   
     }
-    
- 
-  
-    
+}
+
+extension AddNoteVC: ImagePickerDelegate {
+
+    func didSelect(image: UIImage?) {
+        guard let image = image else {
+            return
+        }
+        self.imageView.image = image
+    }
 }

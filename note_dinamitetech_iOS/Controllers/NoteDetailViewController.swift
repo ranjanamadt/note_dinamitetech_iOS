@@ -16,7 +16,8 @@ class NoteDetailViewController: UIViewController {
     @IBOutlet weak var descpTxt: UILabel!
     @IBOutlet weak var categoryTxt: UILabel!
     @IBOutlet weak var titleTxt: UILabel!
-    
+    @IBOutlet weak var imageView: UIImageView!
+
     var recorder = AudioRecorderHelper.shared
     
     override func viewDidLoad() {
