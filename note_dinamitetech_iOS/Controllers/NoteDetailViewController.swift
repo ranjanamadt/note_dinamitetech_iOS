@@ -6,13 +6,24 @@
 //
 
 import UIKit
+import CoreData
 
 class NoteDetailViewController: UIViewController {
+    
+    var selectedNote: Note?
+    var delegate : addNote? = nil
 
+    @IBOutlet weak var descpTxt: UILabel!
+    @IBOutlet weak var categoryTxt: UILabel!
+    @IBOutlet weak var titleTxt: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+//
+//        titleTxt.text = selectedNote?.noteTitle
+//        descpTxt.text = selectedNote?.noteDescription
+//        categoryTxt.text = selectedNote?.category?.catName
     }
     
 
@@ -25,5 +36,10 @@ class NoteDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+//
+//    @IBAction func cancel(_ sender: Any) {
+//
+//        dismiss(animated: true, completion: nil)
+//
+//    }
 }

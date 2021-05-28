@@ -143,17 +143,27 @@ class NotesVC: UITableViewController , addNote{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+
+//        if let destination = segue.destination as? AddNoteVC {
+//            destination.delegate = self
+//
+//            if let cell = sender as? UITableViewCell {
+//                if let index = tableView.indexPath(for: cell)?.row {
+//                   destination.selectedNote = notes[index]
+//                }
+//            }
+//        }
         
-        if let destination = segue.destination as? AddNoteVC {
+        if let destination = segue.destination as? NoteDetailViewController {
             destination.delegate = self
-            
+
             if let cell = sender as? UITableViewCell {
                 if let index = tableView.indexPath(for: cell)?.row {
-                   // destination.selectedNote = notes[index]
+                   destination.selectedNote = notes[index]
                 }
             }
         }
-        
+
 //        if let destination = segue.destination as? MoveToVC {
 //            if let index = tableView.indexPathsForSelectedRows {
 //                let rows = index.map {$0.row}

@@ -19,7 +19,9 @@ class AddNoteVC: UIViewController {
     
     @IBOutlet weak var textFieldNoteDescription: UITextField!
     
-    var  delegate : addNote? = nil
+    var delegate : addNote? = nil
+    
+    var selectedNote: Note?
     
     override func viewDidLoad() {
         super.viewDidLoad()
