@@ -482,6 +482,9 @@
                                 <rect key="frame" x="346" y="35" width="48" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="dismissVC:" destination="7Yh-Dw-Vpr" eventType="touchUpInside" id="9Vn-fa-UYd"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aoz-7H-PiY"/>
@@ -501,6 +504,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="dismissVC" destination="xYY-tt-5SD" id="Pi2-Tb-or5"/>
                         <segue destination="bG0-AH-e3Q" kind="unwind" identifier="dismissMoveToVC" unwindAction="unwindToNoteTVC:" id="Ed5-fG-Cim"/>
                     </connections>
                 </viewController>

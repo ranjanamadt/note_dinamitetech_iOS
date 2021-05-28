@@ -15,6 +15,10 @@ class NotesVC: UITableViewController , addNote{
             loadNotes()
         }
     }
+    
+    var deletingMovingOption: Bool = false
+    
+    
     // create the context
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -108,6 +112,22 @@ class NotesVC: UITableViewController , addNote{
             print("Error saving the notes \(error.localizedDescription)")
         }
     }
+    
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        guard identifier != "moveNotesSegue" else {
+            return true
+        }
+        return deletingMovingOption ? false : true
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     //MARK: - show search bar func
     func showSearchBar() {
         searchController.searchBar.delegate = self
@@ -167,15 +187,33 @@ class NotesVC: UITableViewController , addNote{
             }
         }
 
-//        if let destination = segue.destination as? MoveToVC {
-//            if let index = tableView.indexPathsForSelectedRows {
-//                let rows = index.map {$0.row}
-//                destination.selectedNotes = rows.map {notes[$0]}
-//            }
-//        }
+        if let destination = segue.destination as? MoveToVC {
+            if let index = tableView.indexPathsForSelectedRows {
+                let rows = index.map {$0.row}
+                destination.selectedNotes = rows.map {notes[$0]}
+            }
+        }
     }
 
+    
+    @IBAction func unwindToNoteTVC(_ unwindSegue: UIStoryboardSegue) {
+//        let sourceViewController = unwindSegue.source
+        // Use data from the view controller which initiated the unwind segue
+        saveNotes()
+        loadNotes()
+        tableView.setEditing(false, animated: true)
+    }
 }
+    
+    
+    
+
+
+
+
+
+
+
 
 //MARK: - search bar delegate methods
 extension NotesVC: UISearchBarDelegate {
