@@ -44,13 +44,6 @@ class NoteDetailViewController: UIViewController {
     }
     
     @IBAction func onPlayClick(_ sender: UIButton) {
-        
-        let tempRecordCount = recorder.getRecordings.count
-        var name = ""
-        if(tempRecordCount>0){
-            name = recorder.getRecordings[tempRecordCount-1] // FileName
-            recorder.play(name: name)
-
-        }    
+        recorder.play(name: (selectedNote?.noteRecording)!)
     }
 }
