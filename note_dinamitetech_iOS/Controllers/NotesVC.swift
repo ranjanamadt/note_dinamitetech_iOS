@@ -20,7 +20,7 @@ class NotesVC: UITableViewController , addNote{
     var notes = [Note]()
     var selectedCategory : Category? {
         didSet {
-            loadNotes()
+            loadNotes(sortByDate: false, sortByTitle: false)
         }
     }
     
@@ -41,11 +41,11 @@ class NotesVC: UITableViewController , addNote{
     }
     
     @IBAction func buttonSortByDate(_ sender: UIBarButtonItem) {
-        
+        loadNotes(sortByDate: true, sortByTitle: false)
     }
     
     @IBAction func buttonAtoZ(_ sender: UIBarButtonItem) {
-        
+        loadNotes(sortByDate: false, sortByTitle: true)
     }
     
     // MARK: - Table view data source
@@ -119,7 +119,7 @@ class NotesVC: UITableViewController , addNote{
         newNote.noteCurrentDate=currentDate
         newNote.noteImage=image
         saveNotes()
-        loadNotes()
+        loadNotes(sortByDate :false, sortByTitle :false)
     }
     
     /// Save notes into core data
@@ -155,14 +155,18 @@ class NotesVC: UITableViewController , addNote{
     
     /// load notes deom core data
     /// - Parameter predicate: parameter comming from search bar - by default is nil
-    func loadNotes(predicate: NSPredicate? = nil ) {
+    func loadNotes(predicate: NSPredicate? = nil , sortByDate :Bool, sortByTitle :Bool ) {
         let request: NSFetchRequest<Note> = Note.fetchRequest()
         let folderPredicate = NSPredicate(format: "category.catName=%@", selectedCategory!.catName!)
-        request.sortDescriptors = [NSSortDescriptor(key: "noteTitle", ascending: true)]
-     
-//        let sdSortDate = NSSortDescriptor.init(key: "noteCurrentDate", ascending: true)
-//        request.sortDescriptors = [sdSortDate]
         
+        if(sortByTitle){
+            request.sortDescriptors = [NSSortDescriptor(key: "noteTitle", ascending: true)]
+        }
+        if(sortByDate){
+            request.sortDescriptors = [NSSortDescriptor(key: "noteCurrentDate", ascending: true)]
+        }
+     
+     
         if let additionalPredicate = predicate {
             request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [folderPredicate, additionalPredicate])
         } else {
@@ -251,7 +255,7 @@ class NotesVC: UITableViewController , addNote{
 //        let sourceViewController = unwindSegue.source
         // Use data from the view controller which initiated the unwind segue
         saveNotes()
-        loadNotes()
+        loadNotes(sortByDate: false, sortByTitle: false)
         tableView.setEditing(false, animated: true)
     }
 }
@@ -275,7 +279,7 @@ extension NotesVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         // add predicate
         let predicate = NSPredicate(format: "noteTitle CONTAINS[cd] %@", searchBar.text!)
-        loadNotes(predicate: predicate)
+        loadNotes(predicate: predicate,sortByDate: false, sortByTitle: false)
     }
     
     
@@ -285,7 +289,7 @@ extension NotesVC: UISearchBarDelegate {
     ///   - searchText: the text that is written in the search bar
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text?.count == 0 {
-            loadNotes()
+            loadNotes(sortByDate: false, sortByTitle: false)
             
             DispatchQueue.main.async {
                 searchBar.resignFirstResponder()
