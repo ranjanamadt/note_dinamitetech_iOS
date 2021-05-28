@@ -127,7 +127,10 @@
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Notes" id="Qvj-yC-4iK">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="ellipsis" catalog="system" id="D8A-mq-dFJ" userLabel="Editing Item"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="1-30" id="D8A-mq-dFJ" userLabel="Editing Item"/>
+                            <barButtonItem title="a-z" id="cAY-MQ-9Qi"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
@@ -549,7 +552,6 @@
     <color key="tintColor" systemColor="systemGray4Color"/>
     <resources>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
-        <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="folder.badge.plus" catalog="system" width="128" height="91"/>
         <image name="ic_add_audio" width="33.333332061767578" height="33.333332061767578"/>
         <image name="ic_upload_image" width="42.666667938232422" height="42.666667938232422"/>

@@ -30,15 +30,8 @@ class NotesVC: UITableViewController , addNote{
         
         navigationItem.title = selectedCategory?.catName
         showSearchBar()
-        fetchData()
     }
     
-    func fetchData() {
-        
-//        notes = notes..sorted{ $0 < $1 }
-//        yourTableView.reloadData()
-        
-    }
     
     // MARK: - Table view data source
 
@@ -130,13 +123,7 @@ class NotesVC: UITableViewController , addNote{
         }
         return deletingMovingOption ? false : true
     }
-    
-    
-    
-    
-    
-    
-    
+
     
     //MARK: - show search bar func
     func showSearchBar() {
