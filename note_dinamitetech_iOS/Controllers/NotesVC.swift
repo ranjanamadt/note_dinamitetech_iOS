@@ -144,15 +144,15 @@ class NotesVC: UITableViewController , addNote{
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
 
-//        if let destination = segue.destination as? AddNoteVC {
-//            destination.delegate = self
-//
-//            if let cell = sender as? UITableViewCell {
-//                if let index = tableView.indexPath(for: cell)?.row {
-//                   destination.selectedNote = notes[index]
-//                }
-//            }
-//        }
+        if let destination = segue.destination as? AddNoteVC {
+            destination.delegate = self
+
+            if let cell = sender as? UITableViewCell {
+                if let index = tableView.indexPath(for: cell)?.row {
+                   destination.selectedNote = notes[index]
+                }
+            }
+        }
         
         if let destination = segue.destination as? NoteDetailViewController {
             destination.delegate = self
