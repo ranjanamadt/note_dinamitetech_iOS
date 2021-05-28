@@ -159,6 +159,9 @@ class NotesVC: UITableViewController , addNote{
         let request: NSFetchRequest<Note> = Note.fetchRequest()
         let folderPredicate = NSPredicate(format: "category.catName=%@", selectedCategory!.catName!)
         request.sortDescriptors = [NSSortDescriptor(key: "noteTitle", ascending: true)]
+     
+//        let sdSortDate = NSSortDescriptor.init(key: "noteCurrentDate", ascending: true)
+//        request.sortDescriptors = [sdSortDate]
         
         if let additionalPredicate = predicate {
             request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [folderPredicate, additionalPredicate])
