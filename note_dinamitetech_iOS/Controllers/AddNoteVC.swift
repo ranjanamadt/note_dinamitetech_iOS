@@ -7,7 +7,7 @@
 import UIKit
 
 protocol addNote {
-    func updateNote( title: String,descrption :String, category : String)
+    func updateNote( title: String,descrption :String)
 }
 
 class AddNoteVC: UIViewController {
@@ -15,7 +15,7 @@ class AddNoteVC: UIViewController {
 
     @IBOutlet weak var textFieldNoteTitle: UITextField!
     
-    @IBOutlet weak var textFieldNoteCategory: UITextField!
+
     
     @IBOutlet weak var textFieldNoteDescription: UITextField!
     
@@ -35,11 +35,11 @@ class AddNoteVC: UIViewController {
         
         let noteTitle = textFieldNoteTitle.text ?? ""
         let noteDescription = textFieldNoteDescription.text ?? ""
-        let noteCatgeory = textFieldNoteCategory.text ?? ""
+     
         
         
-        if(noteTitle != "" || noteDescription != "" || noteCatgeory != "" ){
-            delegate?.updateNote(title: noteTitle, descrption: noteDescription, category: noteCatgeory)
+        if(noteTitle != "" || noteDescription != "" ){
+            delegate?.updateNote(title: noteTitle, descrption: noteDescription)
         }
 
         self.dismiss(animated: false, completion: nil)
