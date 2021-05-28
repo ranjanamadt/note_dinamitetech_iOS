@@ -34,7 +34,7 @@ class AddNoteVC: UIViewController {
     @IBAction func onDoneClick(_ sender: Any) {
         
         let noteTitle = textFieldNoteTitle.text ?? ""
-        let noteDescription = textFieldNoteTitle.text ?? ""
+        let noteDescription = textFieldNoteDescription.text ?? ""
         let noteCatgeory = textFieldNoteCategory.text ?? ""
         
         

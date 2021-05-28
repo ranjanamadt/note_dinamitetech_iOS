@@ -87,7 +87,7 @@ class NotesVC: UITableViewController , addNote{
         notes = []
         let newNote = Note(context: context)
         newNote.noteTitle = title
-        newNote.noteDescription=description
+        newNote.noteDescription = descrption
         newNote.category = selectedCategory
         // For Unique ID of note
        // newNote.noteId = Int32(newNote.objectID.hash)

@@ -20,10 +20,12 @@ class NoteDetailViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-//
+
         titleTxt.text = selectedNote?.noteTitle
-        descpTxt.text = selectedNote?.noteDescription
+       
         categoryTxt.text = selectedNote?.category?.catName
+        
+        descpTxt.text = selectedNote?.noteDescription
     }
     
 
