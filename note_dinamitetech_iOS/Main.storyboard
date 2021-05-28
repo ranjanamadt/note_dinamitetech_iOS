@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QYC-df-hPm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QYC-df-hPm">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,10 +18,10 @@
                         <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="catgory_cell" textLabel="r9M-tM-AJR" detailTextLabel="aQb-8F-3h4" style="IBUITableViewCellStyleSubtitle" id="nki-AA-VUd">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="24.333333969116211" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nki-AA-VUd" id="D4i-29-zky">
-                                    <rect key="frame" x="0.0" y="0.0" width="382.66666666666669" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="384.33333333333331" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="r9M-tM-AJR">
@@ -78,10 +78,10 @@
                         <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="note_cell" textLabel="i5g-oy-6vT" detailTextLabel="DNX-29-OgD" style="IBUITableViewCellStyleSubtitle" id="jsA-UJ-mXb">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="24.333333969116211" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jsA-UJ-mXb" id="0hm-ET-7qK">
-                                    <rect key="frame" x="0.0" y="0.0" width="382.66666666666669" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="384.33333333333331" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="i5g-oy-6vT">
@@ -133,12 +133,12 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Notes" id="Qvj-yC-4iK">
                         <rightBarButtonItems>
-                            <barButtonItem title="1-30" id="D8A-mq-dFJ" userLabel="Editing Item">
+                            <barButtonItem title="1-30" image="list.number.rtl" catalog="system" id="D8A-mq-dFJ" userLabel="Editing Item">
                                 <connections>
                                     <action selector="buttonSortByDate:" destination="JEN-XW-A8w" id="Bj2-cM-Quh"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="a-z" id="cAY-MQ-9Qi">
+                            <barButtonItem title="a-z" image="character.cursor.ibeam" catalog="system" id="cAY-MQ-9Qi">
                                 <connections>
                                     <action selector="buttonAtoZ:" destination="JEN-XW-A8w" id="VnE-T0-W2e"/>
                                 </connections>
@@ -466,7 +466,7 @@
                                 <color key="sectionIndexBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="JeT-Re-hCc" style="IBUITableViewCellStyleDefault" id="xFs-mm-30h">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="414" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xFs-mm-30h" id="hFP-0k-eeD">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
@@ -568,10 +568,12 @@
     </scenes>
     <color key="tintColor" systemColor="systemGray4Color"/>
     <resources>
+        <image name="character.cursor.ibeam" catalog="system" width="128" height="118"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="folder.badge.plus" catalog="system" width="128" height="91"/>
         <image name="ic_add_audio" width="33.333332061767578" height="33.333332061767578"/>
         <image name="ic_upload_image" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="list.number.rtl" catalog="system" width="128" height="97"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="rectangle.and.pencil.and.ellipsis.rtl" catalog="system" width="128" height="92"/>
         <image name="trash" catalog="system" width="121" height="128"/>
