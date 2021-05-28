@@ -31,7 +31,7 @@ class NoteDetailViewController: UIViewController {
         
         descpTxt.text = selectedNote?.noteDescription
         
-        let dataDecoded : Data = Data(base64Encoded: (selectedNote?.noteImage)!, options: .ignoreUnknownCharacters)!
+        let dataDecoded : Data = Data(base64Encoded: (selectedNote?.noteImage) ?? "", options: .ignoreUnknownCharacters)!
         let decodedimage = UIImage(data: dataDecoded)
         imageView.image = decodedimage
     }

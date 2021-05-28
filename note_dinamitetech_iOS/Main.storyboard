@@ -133,8 +133,16 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Notes" id="Qvj-yC-4iK">
                         <rightBarButtonItems>
-                            <barButtonItem title="1-30" id="D8A-mq-dFJ" userLabel="Editing Item"/>
-                            <barButtonItem title="a-z" id="cAY-MQ-9Qi"/>
+                            <barButtonItem title="1-30" id="D8A-mq-dFJ" userLabel="Editing Item">
+                                <connections>
+                                    <action selector="buttonSortByDate:" destination="JEN-XW-A8w" id="Bj2-cM-Quh"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="a-z" id="cAY-MQ-9Qi">
+                                <connections>
+                                    <action selector="buttonAtoZ:" destination="JEN-XW-A8w" id="VnE-T0-W2e"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>

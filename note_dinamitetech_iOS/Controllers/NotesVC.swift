@@ -37,6 +37,13 @@ class NotesVC: UITableViewController , addNote{
         showSearchBar()
     }
     
+    @IBAction func buttonSortByDate(_ sender: UIBarButtonItem) {
+        
+    }
+    
+    @IBAction func buttonAtoZ(_ sender: UIBarButtonItem) {
+        
+    }
     
     // MARK: - Table view data source
 
@@ -139,7 +146,6 @@ class NotesVC: UITableViewController , addNote{
         definesPresentationContext = true
         searchController.searchBar.searchTextField.textColor = .lightGray
     }
-
     
     
     //MARK: - Core data interaction functions
@@ -162,6 +168,7 @@ class NotesVC: UITableViewController , addNote{
         } catch {
             print("Error loading notes \(error.localizedDescription)")
         }
+        
         tableView.reloadData()
     }
     // In a storyboard-based application, you will often want to do a little preparation before navigation
