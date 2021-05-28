@@ -16,34 +16,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sGw-hM-wgf">
-                                <rect key="frame" x="40" y="371" width="334" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_launcher" translatesAutoresizingMaskIntoConstraints="NO" id="sGw-hM-wgf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iNotes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJs-F8-ggV">
-                                <rect key="frame" x="0.0" y="244" width="414" height="56.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="47"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="sGw-hM-wgf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="4lW-UH-lvd"/>
-                            <constraint firstItem="sGw-hM-wgf" firstAttribute="top" secondItem="XJs-F8-ggV" secondAttribute="bottom" constant="20" id="WgE-za-7md"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XJs-F8-ggV" secondAttribute="trailing" id="epA-Hn-z1V"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sGw-hM-wgf" secondAttribute="trailing" constant="40" id="kiH-UG-G4v"/>
-                            <constraint firstItem="XJs-F8-ggV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="rMQ-8J-fI2"/>
-                            <constraint firstItem="XJs-F8-ggV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vBR-TF-1qq"/>
+                            <constraint firstAttribute="trailing" secondItem="sGw-hM-wgf" secondAttribute="trailing" id="2Yn-Lf-kUN"/>
+                            <constraint firstAttribute="bottom" secondItem="sGw-hM-wgf" secondAttribute="bottom" id="KQm-WV-OVl"/>
+                            <constraint firstItem="sGw-hM-wgf" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="cuC-hE-Kqd"/>
+                            <constraint firstItem="sGw-hM-wgf" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="jn0-jl-7ph"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
     <resources>
+        <image name="ic_launcher" width="360" height="640"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
