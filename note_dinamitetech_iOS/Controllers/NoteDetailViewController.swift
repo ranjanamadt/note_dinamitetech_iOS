@@ -16,6 +16,9 @@ class NoteDetailViewController: UIViewController {
     @IBOutlet weak var descpTxt: UILabel!
     @IBOutlet weak var categoryTxt: UILabel!
     @IBOutlet weak var titleTxt: UILabel!
+    
+    var recorder = AudioRecorderHelper.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,4 +51,7 @@ class NoteDetailViewController: UIViewController {
 
     }
     
+    @IBAction func onPlayClick(_ sender: UIButton) {
+        recorder.play(name: (selectedNote?.noteRecording)!)
+    }
 }

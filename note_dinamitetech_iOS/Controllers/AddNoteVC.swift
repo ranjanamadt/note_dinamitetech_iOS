@@ -8,7 +8,7 @@ import UIKit
 import AVFoundation
 
 protocol addNote {
-    func updateNote( title: String,descrption :String, recording:String)
+    func updateNote( title: String,descrption :String, recording:String ,currentDate :String )
 }
 
 class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
@@ -37,24 +37,7 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        recordingSession = AVAudioSession.sharedInstance()
-        
-        do {
-            try recordingSession.setCategory(.playAndRecord, mode: .default)
-            try recordingSession.setActive(true)
-            recordingSession.requestRecordPermission() { [unowned self] allowed in
-                DispatchQueue.main.async {
-                    if allowed {
-                        self.loadRecordingUI()
-                    } else {
-                        // failed to record!
-                    }
-                }
-            }
-        } catch {
-            // failed to record!
-        }
+    
         
     }
     @IBAction func onUploadImageClick(_ sender: Any) {
@@ -63,11 +46,12 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
     @IBAction func onRecordClick(_ sender: UIButton) {
         
         if recorder.isRecording{
-            
+            sender.setImage(UIImage(named: "ic_add_audio.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
             recorder.stopRecording()
-           
         } else{
-           //sender.image = UIImage(systemName: "pause.fill")
+            
+            sender.setImage(UIImage(named: "ic_stop.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
+
             recorder.record()
            
         }
@@ -80,8 +64,14 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
      
         print(audioURL)
         
+        let date = Date()
+        let formatter = DateFormatter()
+        let result = formatter.string(from: date)
+      
+        
+        print(result)
         if(noteTitle != "" || noteDescription != "" ){
-            delegate?.updateNote(title: noteTitle, descrption: noteDescription, recording: audioURL)
+            delegate?.updateNote(title: noteTitle, descrption: noteDescription, recording: audioURL, currentDate : result)
         }
 
         self.dismiss(animated: false, completion: nil)
@@ -93,91 +83,18 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
         self.dismiss(animated: false, completion: nil)
         
         
-        
     }
     
     
     @IBAction func onPlayCLick(_ sender: Any) {
-
+        
         let name = recorder.getRecordings[0]    // FileName
         recorder.play(name: name)
         audioURL=name
-        
-        
-//        if player.isPlaying {
-//            //playBtn.cc
-//            player.pause()
-//    //            isPlaying = false
-//            timer.invalidate()
-//
-//        } else {
-//          //  playBtn.image = UIImage(systemName: "pause.fill")
-//            player.play()
-//    //            isPlaying = true
-//            //timer  = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateScrubber), userInfo: nil, repeats: true)
-//        }
-    
+  
     }
     
  
-    func loadRecordingUI() {
-        recordAudio.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
-    
-    }
-    
-    func startRecording() {
-        let audioFilename = getDocumentsDirectory().appendingPathComponent("recording.m4a")
-        
-        audioURL=audioFilename.absoluteString
-
-        let settings = [
-            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-            AVSampleRateKey: 12000,
-            AVNumberOfChannelsKey: 1,
-            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
-        ]
-
-        do {
-            audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
-            audioRecorder.delegate = self
-            audioRecorder.record()
-
-            recordAudio.setTitle("Tap to Stop", for: .normal)
-        } catch {
-            finishRecording(success: false)
-        }
-    }
-    
-    func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
-    }
-    func finishRecording(success: Bool) {
-        audioRecorder.stop()
-        audioRecorder = nil
-
-//        if success {
-//            recordAudio.setTitle("Tap to Re-record", for: .normal)
-//        } else {
-//            recordAudio.setTitle("Tap to Record", for: .normal)
-//            // recording failed :(
-//        }
-    }
-    
-    @objc func recordTapped() {
-        if audioRecorder == nil {
-            startRecording()
-        } else {
-            finishRecording(success: true)
-        }
-    }
-    
-    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        if !flag {
-            finishRecording(success: false)
-        }
-    }
-    
-    
+  
     
 }

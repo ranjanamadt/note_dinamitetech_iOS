@@ -5,6 +5,7 @@
         <relationship name="notes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Note" inverseName="category" inverseEntity="Note"/>
     </entity>
     <entity name="Note" representedClassName="Note" syncable="YES" codeGenerationType="class">
+        <attribute name="noteCurrentDate" optional="YES" attributeType="String"/>
         <attribute name="noteDescription" optional="YES" attributeType="String"/>
         <attribute name="noteRecording" optional="YES" attributeType="String"/>
         <attribute name="noteTitle" optional="YES" attributeType="String"/>
@@ -12,6 +13,6 @@
     </entity>
     <elements>
         <element name="Category" positionX="-63" positionY="-18" width="128" height="59"/>
-        <element name="Note" positionX="-54" positionY="-9" width="128" height="89"/>
+        <element name="Note" positionX="-54" positionY="-9" width="128" height="104"/>
     </elements>
 </model>
