@@ -243,20 +243,14 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vlg-fH-haf">
-                                                                <rect key="frame" x="281.66666666666669" y="257.66666666666669" width="33.333333333333314" height="70"/>
+                                                                <rect key="frame" x="255" y="257.66666666666669" width="60" height="70"/>
                                                                 <constraints>
+                                                                    <constraint firstAttribute="width" constant="60" id="3Fe-aP-no5"/>
                                                                     <constraint firstAttribute="height" constant="70" id="fwL-mz-m6J"/>
                                                                 </constraints>
                                                                 <state key="normal" image="ic_add_audio"/>
                                                                 <connections>
                                                                     <action selector="onRecordClick:" destination="cK0-kq-hhW" eventType="touchUpInside" id="fci-Iq-Yhg"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NF0-rx-aCi">
-                                                                <rect key="frame" x="0.0" y="257.66666666666669" width="30" height="30"/>
-                                                                <state key="normal" title="Play"/>
-                                                                <connections>
-                                                                    <action selector="onPlayCLick:" destination="cK0-kq-hhW" eventType="touchUpInside" id="qq6-Bd-rL4"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -268,14 +262,12 @@
                                                             <constraint firstItem="Vlg-fH-haf" firstAttribute="top" secondItem="zw8-nY-e1Q" secondAttribute="bottom" constant="20" id="DtQ-Yf-hTC"/>
                                                             <constraint firstAttribute="trailing" secondItem="zw8-nY-e1Q" secondAttribute="trailing" id="EPr-JH-zVF"/>
                                                             <constraint firstAttribute="trailing" secondItem="Qqz-34-tKP" secondAttribute="trailing" id="HdC-Ae-X51"/>
-                                                            <constraint firstItem="NF0-rx-aCi" firstAttribute="top" secondItem="zw8-nY-e1Q" secondAttribute="bottom" constant="20" id="JN1-Ls-cLM"/>
                                                             <constraint firstItem="iV3-t9-KZh" firstAttribute="top" secondItem="Qqz-34-tKP" secondAttribute="bottom" constant="20" id="dB6-wm-kxm"/>
                                                             <constraint firstItem="Qqz-34-tKP" firstAttribute="top" secondItem="7fU-qG-Mk8" secondAttribute="bottom" constant="10" id="h4Y-Pk-eHZ"/>
                                                             <constraint firstItem="zw8-nY-e1Q" firstAttribute="leading" secondItem="tPg-5D-idX" secondAttribute="leading" id="k3P-hC-GhW"/>
                                                             <constraint firstItem="Qqz-34-tKP" firstAttribute="leading" secondItem="tPg-5D-idX" secondAttribute="leading" id="nNC-UO-NG1"/>
                                                             <constraint firstAttribute="trailing" secondItem="Vlg-fH-haf" secondAttribute="trailing" constant="20" id="o31-uc-Xp7"/>
                                                             <constraint firstItem="7fU-qG-Mk8" firstAttribute="top" secondItem="tPg-5D-idX" secondAttribute="top" id="tSM-vY-gAz"/>
-                                                            <constraint firstItem="NF0-rx-aCi" firstAttribute="leading" secondItem="tPg-5D-idX" secondAttribute="leading" id="vQj-YT-Sbm"/>
                                                             <constraint firstItem="7fU-qG-Mk8" firstAttribute="leading" secondItem="tPg-5D-idX" secondAttribute="leading" id="xYA-ri-cOo"/>
                                                         </constraints>
                                                     </view>
@@ -341,13 +333,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlO-J2-r2g">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Note Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YlO-J2-r2g">
                                 <rect key="frame" x="20" y="135" width="88" height="23"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWo-4p-NQl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWo-4p-NQl">
                                 <rect key="frame" x="20" y="164" width="394" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="kRk-zj-vx3"/>
@@ -356,13 +348,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zpp-DC-PhJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Note Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zpp-DC-PhJ">
                                 <rect key="frame" x="20" y="210" width="139.66666666666666" height="25"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esW-sk-m8I">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esW-sk-m8I">
                                 <rect key="frame" x="20" y="241" width="394" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -377,7 +369,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhT-ac-WCk">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Note Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhT-ac-WCk">
                                 <rect key="frame" x="20" y="481" width="354" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -422,6 +414,7 @@
                             <constraint firstItem="Ofl-St-D2R" firstAttribute="top" secondItem="cLp-7F-oOQ" secondAttribute="top" constant="35" id="9Rr-aa-uqh"/>
                             <constraint firstItem="d48-vY-K3X" firstAttribute="top" secondItem="GhT-ac-WCk" secondAttribute="bottom" constant="30" id="9XN-Qh-EQD"/>
                             <constraint firstItem="cLp-7F-oOQ" firstAttribute="trailing" secondItem="Ofl-St-D2R" secondAttribute="trailing" constant="31" id="AK1-Yl-nE6"/>
+                            <constraint firstItem="GhT-ac-WCk" firstAttribute="top" secondItem="esW-sk-m8I" secondAttribute="bottom" constant="30" id="Eyg-3d-tJv"/>
                             <constraint firstItem="aUK-hr-zhc" firstAttribute="leading" secondItem="d48-vY-K3X" secondAttribute="leading" id="Nds-ib-Pjd"/>
                             <constraint firstItem="esW-sk-m8I" firstAttribute="leading" secondItem="cLp-7F-oOQ" secondAttribute="leading" constant="20" id="ODX-U8-c5d"/>
                             <constraint firstItem="Zpp-DC-PhJ" firstAttribute="leading" secondItem="cLp-7F-oOQ" secondAttribute="leading" constant="20" id="RcI-kl-XUj"/>

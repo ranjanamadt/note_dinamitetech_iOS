@@ -16,7 +16,6 @@
 		BF4975BE265FCD40009CA85E /* NoteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4975BD265FCD40009CA85E /* NoteDetailViewController.swift */; };
 		BF55402F2654D6C9007F09BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF55402E2654D6C9007F09BC /* AppDelegate.swift */; };
 		BF5540312654D6C9007F09BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5540302654D6C9007F09BC /* SceneDelegate.swift */; };
-		BF5540332654D6C9007F09BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5540322654D6C9007F09BC /* ViewController.swift */; };
 		BF5540392654D6C9007F09BC /* note_dinamitetech_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF5540372654D6C9007F09BC /* note_dinamitetech_iOS.xcdatamodeld */; };
 		BF55403B2654D6CE007F09BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF55403A2654D6CE007F09BC /* Assets.xcassets */; };
 		BF55403E2654D6CE007F09BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF55403C2654D6CE007F09BC /* LaunchScreen.storyboard */; };
@@ -34,7 +33,6 @@
 		BF55402B2654D6C9007F09BC /* note_dinamitetech_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = note_dinamitetech_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF55402E2654D6C9007F09BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF5540302654D6C9007F09BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BF5540322654D6C9007F09BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BF5540382654D6C9007F09BC /* note_dinamitetech_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = note_dinamitetech_iOS.xcdatamodel; sourceTree = "<group>"; };
 		BF55403A2654D6CE007F09BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF55403D2654D6CE007F09BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 				BF40E0AA265ACB1500733BD1 /* Main.storyboard */,
 				BF55402E2654D6C9007F09BC /* AppDelegate.swift */,
 				BF5540302654D6C9007F09BC /* SceneDelegate.swift */,
-				BF5540322654D6C9007F09BC /* ViewController.swift */,
 				BF55403A2654D6CE007F09BC /* Assets.xcassets */,
 				BF55403C2654D6CE007F09BC /* LaunchScreen.storyboard */,
 				BF55403F2654D6CE007F09BC /* Info.plist */,
@@ -172,7 +169,6 @@
 				48BB0B8D2660E0CC00D45895 /* MoveToVC.swift in Sources */,
 				BF5540392654D6C9007F09BC /* note_dinamitetech_iOS.xcdatamodeld in Sources */,
 				BF4975BE265FCD40009CA85E /* NoteDetailViewController.swift in Sources */,
-				BF5540332654D6C9007F09BC /* ViewController.swift in Sources */,
 				BF2459C1265CD4C700D699BA /* CategoriesVC.swift in Sources */,
 				BF2459C0265CD4C700D699BA /* NotesVC.swift in Sources */,
 				E300923C2660EE9E004D487C /* imagePicker.swift in Sources */,

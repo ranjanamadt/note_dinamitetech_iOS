@@ -44,6 +44,7 @@ class NoteDetailViewController: UIViewController {
     }
     
     @IBAction func onPlayClick(_ sender: UIButton) {
+       // print(selectedNote?.noteRecording!)
         recorder.play(name: (selectedNote?.noteRecording)!)
     }
 }

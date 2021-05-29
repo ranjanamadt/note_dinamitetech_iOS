@@ -6,12 +6,12 @@
       "scale" : "1x"
     },
     {
-      "filename" : "ic_stop-1.png",
+      "filename" : "ic_stop@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ic_stop-2.png",
+      "filename" : "ic_stop@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -36,7 +36,7 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
     var timer = Timer()
     // we need to access to the audio path
     
-    var audioURL=""
+    
     var path = Bundle.main.path(forResource: "documents", ofType: "recording.m4a")
     
     override func viewDidLoad() {
@@ -70,7 +70,7 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
         let noteTitle = textFieldNoteTitle.text ?? ""
         let noteDescription = textFieldNoteDescription.text ?? ""
      
-        print(audioURL)
+       // print(audioURL)
         
         let date = Date()
         let formatter = DateFormatter()
@@ -88,9 +88,14 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
         } else {
         }
         
+        let tempRecordCount = recorder.getRecordings.count
+        var name = ""
+        if(tempRecordCount>0){
+            name = recorder.getRecordings[tempRecordCount-1] // FileName
+        }
         
         if(noteTitle != "" || noteDescription != "" ){
-            delegate?.updateNote(title: noteTitle, descrption: noteDescription, recording: audioURL, currentDate : result , image: data)
+            delegate?.updateNote(title: noteTitle, descrption: noteDescription, recording: name, currentDate : result , image: data)
         }
 
         self.dismiss(animated: false, completion: nil)
@@ -103,14 +108,7 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
     }
     
     
-    @IBAction func onPlayCLick(_ sender: Any) {
-        let tempRecordCount = recorder.getRecordings.count
-        var name = ""
-        if(tempRecordCount>0){
-            name = recorder.getRecordings[tempRecordCount-1] // FileName
-        }
-        recorder.play(name: audioURL+name)
-    }
+    
 }
 
 extension AddNoteVC: ImagePickerDelegate {
