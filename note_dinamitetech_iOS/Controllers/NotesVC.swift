@@ -13,8 +13,7 @@ class NotesVC: UITableViewController , addNote{
     @IBOutlet weak var trashBtn: UIBarButtonItem!
     @IBOutlet weak var moveBtn: UIBarButtonItem!
     
-    
-    // create notes
+    // create note
     var notes = [Note]()
     var selectedCategory : Category? {
         didSet {
@@ -238,6 +237,7 @@ class NotesVC: UITableViewController , addNote{
     
     /// editing option functionality - when three dots is pressed this function is executed
     /// - Parameter sender: bar button
+    
     
     @IBAction func editingBtnPressed(_ sender: UIBarButtonItem) {
         deletingMovingOption = !deletingMovingOption

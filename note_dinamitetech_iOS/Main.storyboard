@@ -112,22 +112,25 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem enabled="NO" title="Item" image="trash" catalog="system" id="cf7-sC-zxw" userLabel="Trash Item">
+                        <barButtonItem enabled="NO" title="Item" image="trash" catalog="system" width="144.33333333333334" id="cf7-sC-zxw" userLabel="Trash Item">
                             <connections>
                                 <action selector="trashBtnPressed:" destination="JEN-XW-A8w" id="YqY-Px-Vql"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="xRj-JB-5uJ"/>
-                        <barButtonItem enabled="NO" title="Item" image="tray.and.arrow.down" catalog="system" id="lRL-NC-6jn" userLabel="Move Item">
+                        <barButtonItem enabled="NO" title="Item" image="tray.and.arrow.down" catalog="system" width="280.33333333333331" id="lRL-NC-6jn" userLabel="Move Item">
                             <connections>
                                 <segue destination="7Yh-Dw-Vpr" kind="presentation" identifier="moveNotesSegue" id="DTc-6Q-2Yo"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="r7f-0M-kFJ"/>
-                        <barButtonItem title="Item" image="rectangle.and.pencil.and.ellipsis.rtl" catalog="system" style="done" id="RjI-ym-Aa0">
+                        <barButtonItem title="Item" image="rectangle.and.pencil.and.ellipsis.rtl" catalog="system" width="310" style="done" id="RjI-ym-Aa0">
                             <connections>
                                 <action selector="editingBtnPressed:" destination="JEN-XW-A8w" id="fZo-Ol-dba"/>
                                 <segue destination="cK0-kq-hhW" kind="showDetail" id="bXi-6G-D2B"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem image="ellipsis" catalog="system" id="Vdu-az-P3C">
+                            <connections>
+                                <action selector="editingBtnPressed:" destination="JEN-XW-A8w" id="ElM-EB-Fbe"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
@@ -147,7 +150,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="moveBtn" destination="lRL-NC-6jn" id="lID-Js-aXI"/>
+                        <outlet property="moveBtn" destination="lRL-NC-6jn" id="yxK-4R-RSL"/>
                         <outlet property="trashBtn" destination="cf7-sC-zxw" id="vqV-BP-3Jb"/>
                     </connections>
                 </tableViewController>
@@ -563,6 +566,7 @@
     <resources>
         <image name="character.cursor.ibeam" catalog="system" width="128" height="118"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="folder.badge.plus" catalog="system" width="128" height="91"/>
         <image name="ic_add_audio" width="33.333332061767578" height="33.333332061767578"/>
         <image name="ic_upload_image" width="42.666667938232422" height="42.666667938232422"/>

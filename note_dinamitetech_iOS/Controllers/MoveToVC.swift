@@ -34,7 +34,7 @@ class MoveToVC: UIViewController {
         let request: NSFetchRequest<Category> = Category.fetchRequest()
         
         // predicate
-        let CategoryPredicate = NSPredicate(format: "NAME DOESN'T MATCH! %@", selectedNotes?[0].category?.catName ?? "")
+        let CategoryPredicate = NSPredicate(format: "NOT name MATCHES %@", selectedNotes?[0].category?.catName ?? "")
         request.predicate = CategoryPredicate
         
         do {
