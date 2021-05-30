@@ -47,13 +47,11 @@ class MoveToVC: UIViewController {
     //MARK: - IB Action methods
     
     
-    
-    
     @IBAction func dismissVC(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
-
+    
 
 }
 
