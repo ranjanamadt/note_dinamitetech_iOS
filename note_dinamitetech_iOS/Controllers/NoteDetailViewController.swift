@@ -52,11 +52,37 @@ class NoteDetailViewController: UIViewController,AVAudioPlayerDelegate ,CLLocati
         let t1 = Double(selectedNote!.noteLat)
         let t2 = (selectedNote?.noteLong)!
         
-        //displayLocation(latitude: t1, longitude: t2, title: "My location", subtitle: "fdgf")
+        displayLocation(latitude: t1, longitude: t2, title: "My location", subtitle: "fdgf")
         
         print(t1)
 
     }
+    
+    func displayLocation(latitude: CLLocationDegrees,
+                         longitude: CLLocationDegrees,
+                         title: String,
+                         subtitle: String) {
+        // 2nd step - define span
+        let latDelta: CLLocationDegrees = 0.05
+        let lngDelta: CLLocationDegrees = 0.05
+        
+        let span = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: lngDelta)
+        // 3rd step is to define the location
+        let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        // 4th step is to define the region
+        let region = MKCoordinateRegion(center: location, span: span)
+        
+        // 5th step is to set the region for the map
+        mapView.setRegion(region, animated: true)
+        
+        // 6th step is to define annotation
+        let annotation = MKPointAnnotation()
+        annotation.title = title
+        annotation.subtitle = subtitle
+        annotation.coordinate = location
+        mapView.addAnnotation(annotation)
+    }
+
     
     
     
