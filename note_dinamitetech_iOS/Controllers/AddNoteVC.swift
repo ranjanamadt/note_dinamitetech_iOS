@@ -9,7 +9,7 @@ import AVFoundation
 import MapKit
 
 protocol addNote {
-    func updateNote( title: String,descrption :String, recording:Data? ,currentDate :String, image : Data?)
+    func updateNote( title: String,descrption :String, recording:Data? ,currentDate :String, image : Data?,latitude: Double, longitude: Double)
 }
 
 class AddNoteVC: UIViewController , AVAudioRecorderDelegate , CLLocationManagerDelegate{
@@ -109,16 +109,13 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate , CLLocationManagerD
         }
         
         
-       // let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        
-        
         if(noteTitle.isEmpty){
             alertMessage(message: "Enter Note Title")
         }else if (noteDescription.isEmpty){
             alertMessage(message: "Enter Note Description")
         }else{
             // Update note
-            delegate?.updateNote(title: noteTitle, descrption: noteDescription, recording: audioData, currentDate: currentDate, image: imageData)
+            delegate?.updateNote(title: noteTitle, descrption: noteDescription, recording: audioData, currentDate: currentDate, image: imageData, latitude:lati, longitude:longi)
             
             self.dismiss(animated: false, completion: nil)
             
