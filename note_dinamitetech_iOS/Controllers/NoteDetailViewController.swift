@@ -26,19 +26,20 @@ class NoteDetailViewController: UIViewController,AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Show data
 
         titleTxt.text = selectedNote?.noteTitle
 
         categoryTxt.text = selectedNote?.category?.catName
         
         descpTxt.text = selectedNote?.noteDescription
+    
         
-        let dataDecoded : Data = Data(base64Encoded: (selectedNote?.noteImage) ?? "", options: .ignoreUnknownCharacters)!
-        let decodedimage = UIImage(data: dataDecoded)
-        imageView.image = decodedimage
-        
-        
+        if let image = selectedNote?.noteImage{
+            imageView.image = UIImage(data: image)
+        } else {
+            imageView.isHidden=true
+        }
         
         if(selectedNote?.noteRecording == nil){
             btnPlay.isHidden = true

@@ -7,7 +7,7 @@
     <entity name="Note" representedClassName="Note" syncable="YES" codeGenerationType="class">
         <attribute name="noteCurrentDate" optional="YES" attributeType="String"/>
         <attribute name="noteDescription" optional="YES" attributeType="String"/>
-        <attribute name="noteImage" optional="YES" attributeType="String"/>
+        <attribute name="noteImage" optional="YES" attributeType="Binary"/>
         <attribute name="noteRecording" optional="YES" attributeType="Binary"/>
         <attribute name="noteTitle" optional="YES" attributeType="String"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="notes" inverseEntity="Category"/>

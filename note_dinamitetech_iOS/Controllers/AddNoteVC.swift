@@ -8,7 +8,7 @@ import UIKit
 import AVFoundation
 
 protocol addNote {
-    func updateNote( title: String,descrption :String, recording:Data? ,currentDate :String, image : String )
+    func updateNote( title: String,descrption :String, recording:Data? ,currentDate :String, image : Data? )
 }
 
 class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
@@ -57,24 +57,19 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
         let noteTitle = textFieldNoteTitle.text ?? ""
         let noteDescription = textFieldNoteDescription.text ?? ""
      
-       // print(audioURL)
-        
+       // Get current Date
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
-        let result = formatter.string(from: date)
-        print(result)
-
-        var data = ""
-        if imageView.image != nil {
-            let imageData = imageView.image!.jpegData(compressionQuality: 0.5)
-            var imageBase64String = imageData?.base64EncodedString()
-            print(imageBase64String ?? "Could not encode image to Base64")
-            imageBase64String = "" + imageBase64String!
-            data = imageBase64String!
-        } else {
+        let currentDate = formatter.string(from: date)
+        
+       // Get Image Data from Image View to save in Database
+        var imageData : Data?
+        if(imageView.image != nil){
+           imageData = imageView.image!.pngData()!
         }
-      
+
+        // Get audio data to save in database
         var audioData : Data? = nil
         if (audioURL != nil){
           audioData = try? Data(contentsOf: audioURL!)
@@ -85,7 +80,8 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
         }else if (noteDescription.isEmpty){
             alertMessage(message: "Enter Note Description")
         }else{
-        delegate?.updateNote(title: noteTitle, descrption: noteDescription, recording: audioData, currentDate: result, image: data)
+            // Update note
+            delegate?.updateNote(title: noteTitle, descrption: noteDescription, recording: audioData, currentDate: currentDate, image: imageData)
             self.dismiss(animated: false, completion: nil)
         }
       
@@ -97,6 +93,7 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
         self.dismiss(animated: false, completion: nil)
     }
     
+    //MARK:- Error Alert message 
     func alertMessage(message: String) {
         let alert = UIAlertController(title: "Note App", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
