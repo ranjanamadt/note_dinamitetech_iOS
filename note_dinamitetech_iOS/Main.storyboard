@@ -495,24 +495,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xYY-tt-5SD">
-                                <rect key="frame" x="346" y="35" width="48" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="dismissVC:" destination="7Yh-Dw-Vpr" eventType="touchUpInside" id="9Vn-fa-UYd"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aoz-7H-PiY"/>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="cBw-og-wDw" secondAttribute="bottom" id="6CU-a4-Y0M"/>
                             <constraint firstItem="cBw-og-wDw" firstAttribute="top" secondItem="S4i-fj-03C" secondAttribute="bottom" id="79w-6T-8lo"/>
-                            <constraint firstItem="xYY-tt-5SD" firstAttribute="centerY" secondItem="S4i-fj-03C" secondAttribute="centerY" id="C6A-25-WbH"/>
                             <constraint firstItem="S4i-fj-03C" firstAttribute="leading" secondItem="aoz-7H-PiY" secondAttribute="leading" id="OQB-tN-Stk"/>
                             <constraint firstItem="S4i-fj-03C" firstAttribute="top" secondItem="aoz-7H-PiY" secondAttribute="top" id="Re0-LA-Lf6"/>
-                            <constraint firstItem="aoz-7H-PiY" firstAttribute="trailing" secondItem="xYY-tt-5SD" secondAttribute="trailing" constant="20" id="ksU-v1-kz5"/>
                             <constraint firstItem="cBw-og-wDw" firstAttribute="leading" secondItem="aoz-7H-PiY" secondAttribute="leading" id="oBy-EN-hm0"/>
                             <constraint firstItem="cBw-og-wDw" firstAttribute="trailing" secondItem="aoz-7H-PiY" secondAttribute="trailing" id="qMw-TX-Fy0"/>
                             <constraint firstItem="aoz-7H-PiY" firstAttribute="trailing" secondItem="S4i-fj-03C" secondAttribute="trailing" id="wjJ-GU-brS"/>
@@ -521,7 +511,6 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="dismissVC" destination="xYY-tt-5SD" id="Pi2-Tb-or5"/>
                         <segue destination="bG0-AH-e3Q" kind="unwind" identifier="dismissMoveToVC" unwindAction="unwindToNoteTVC:" id="Ed5-fG-Cim"/>
                     </connections>
                 </viewController>
