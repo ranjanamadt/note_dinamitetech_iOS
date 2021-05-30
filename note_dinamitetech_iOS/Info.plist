@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -64,11 +66,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>NSCameraUsageDescription</key>
-    <string>This app wants to take pictures.</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>This app wants to use your picture library.</string>
-    <key>NSPhotoLibraryAddUsageDescription</key>
-    <string>This app wants to save pictures to your library.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app wants to take pictures.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app wants to use your picture library.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>This app wants to save pictures to your library.</string>
 </dict>
 </plist>

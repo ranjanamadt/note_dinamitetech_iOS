@@ -6,12 +6,13 @@
 
 import UIKit
 import AVFoundation
+import MapKit
 
 protocol addNote {
-    func updateNote( title: String,descrption :String, recording:Data? ,currentDate :String, image : Data? )
+    func updateNote( title: String,descrption :String, recording:Data? ,currentDate :String, image : Data?)
 }
 
-class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
+class AddNoteVC: UIViewController , AVAudioRecorderDelegate , CLLocationManagerDelegate{
     
 
     @IBOutlet weak var textFieldNoteTitle: UITextField!
@@ -30,6 +31,12 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
     
 
     var audioPlayer: AVAudioPlayer!
+    
+    var locationManager = CLLocationManager()
+   
+    var lati = 0.0
+    var longi = 0.0
+
   
     
     // timer to update my scrubber
@@ -43,7 +50,33 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
+        
+        // we assign the delegate property of the location manager to be this class
+        locationManager.delegate = self
+        
+        // we define the accuracy of the location
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        // rquest for the permission to access the location
+        locationManager.requestWhenInUseAuthorization()
+         
+        // start updating the location
+        locationManager.startUpdatingLocation()
+        //mapView.delegate = self
+        
     }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let userLocation = locations[0]
+        
+         let latitud = userLocation.coordinate.latitude
+         let longitud = userLocation.coordinate.longitude
+        
+        lati = latitud
+        longi = longitud
+    }
+    
     @IBAction func onUploadImageClick(_ sender: Any) {
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
         self.imagePicker.present(from: sender as! UIView)
@@ -75,6 +108,10 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
           audioData = try? Data(contentsOf: audioURL!)
         }
         
+        
+       // let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        
+        
         if(noteTitle.isEmpty){
             alertMessage(message: "Enter Note Title")
         }else if (noteDescription.isEmpty){
@@ -82,7 +119,10 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
         }else{
             // Update note
             delegate?.updateNote(title: noteTitle, descrption: noteDescription, recording: audioData, currentDate: currentDate, image: imageData)
+            
             self.dismiss(animated: false, completion: nil)
+            
+           
         }
       
         

@@ -8,13 +8,15 @@
 import UIKit
 import CoreData
 import AVFoundation
+import MapKit
 
 
-class NoteDetailViewController: UIViewController,AVAudioPlayerDelegate {
+class NoteDetailViewController: UIViewController,AVAudioPlayerDelegate ,CLLocationManagerDelegate{
     
     var selectedNote: Note?
     var delegate : addNote? = nil
 
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var descpTxt: UILabel!
     @IBOutlet weak var categoryTxt: UILabel!
     @IBOutlet weak var titleTxt: UILabel!
@@ -27,7 +29,7 @@ class NoteDetailViewController: UIViewController,AVAudioPlayerDelegate {
         super.viewDidLoad()
 
         // Show data
-
+ 
         titleTxt.text = selectedNote?.noteTitle
 
         categoryTxt.text = selectedNote?.category?.catName
@@ -44,8 +46,22 @@ class NoteDetailViewController: UIViewController,AVAudioPlayerDelegate {
         if(selectedNote?.noteRecording == nil){
             btnPlay.isHidden = true
         }
+        
+        mapView.delegate = self
+                
+        let t1 = Double(selectedNote!.noteLat)
+        let t2 = (selectedNote?.noteLong)!
+        
+        //displayLocation(latitude: t1, longitude: t2, title: "My location", subtitle: "fdgf")
+        
+        print(t1)
+
     }
     
+    
+    
+    
+
     @IBAction func cancel(_ sender: Any) {
         if(audioPlayer.isPlaying){
             audioPlayer.pause()
@@ -65,4 +81,27 @@ class NoteDetailViewController: UIViewController,AVAudioPlayerDelegate {
             print("play(with name:), ",error.localizedDescription)
         }
     }
+}
+
+
+
+extension NoteDetailViewController: MKMapViewDelegate {
+    
+        //MARK: - viewFor annotation method
+        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+
+            if annotation is MKUserLocation {
+                return nil
+            }
+
+            switch annotation.title {
+            case "My location":
+                let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "MyMarker")
+                annotationView.markerTintColor = UIColor.blue
+                return annotationView
+            default:
+                return nil
+            }
+        }
+
 }
