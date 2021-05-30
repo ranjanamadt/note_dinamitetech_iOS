@@ -217,8 +217,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPg-5D-idX">
                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="400"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fU-qG-Mk8">
-                                                                <rect key="frame" x="0.0" y="0.0" width="96.666666666666671" height="26.333333333333332"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Title*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fU-qG-Mk8">
+                                                                <rect key="frame" x="0.0" y="0.0" width="106.33333333333333" height="26.333333333333332"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -239,8 +239,8 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iV3-t9-KZh">
-                                                                <rect key="frame" x="0.0" y="96.333333333333314" width="161.33333333333334" height="25.333333333333329"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Description*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iV3-t9-KZh">
+                                                                <rect key="frame" x="0.0" y="96.333333333333314" width="170.66666666666666" height="25.333333333333329"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -437,6 +437,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnPlay" destination="zjH-kb-0pJ" id="HLV-HZ-I8w"/>
                         <outlet property="categoryTxt" destination="esW-sk-m8I" id="TDO-DM-Tzn"/>
                         <outlet property="descpTxt" destination="d48-vY-K3X" id="I3U-fN-ly3"/>
                         <outlet property="imageView" destination="aUK-hr-zhc" id="jVs-qk-gMG"/>

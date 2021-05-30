@@ -8,7 +8,7 @@ import UIKit
 import AVFoundation
 
 protocol addNote {
-    func updateNote( title: String,descrption :String, recording:String ,currentDate :String, image : String )
+    func updateNote( title: String,descrption :String, recording:Data? ,currentDate :String, image : String )
 }
 
 class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
@@ -28,14 +28,14 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
     
-    var player = AVAudioPlayer()
-    
-    var recorder = AudioRecorderHelper.shared
+
+    var audioPlayer: AVAudioPlayer!
+  
     
     // timer to update my scrubber
     var timer = Timer()
     // we need to access to the audio path
-    
+    var audioURL: URL? = nil
     
     var path = Bundle.main.path(forResource: "documents", ofType: "recording.m4a")
     
@@ -50,20 +50,7 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
         self.imagePickerButton.setImage(UIImage(named: ""), for: .normal)
     }
    
-    @IBAction func onRecordClick(_ sender: UIButton) {
-        
-        if recorder.isRecording{
-            sender.setImage(UIImage(named: "ic_add_audio.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
-            recorder.stopRecording()
-
-        } else{
-            
-            sender.setImage(UIImage(named: "ic_stop.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
-
-            recorder.record()
-           
-        }
-    }
+   
     
     @IBAction func onDoneClick(_ sender: Any) {
         
@@ -87,17 +74,19 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
             data = imageBase64String!
         } else {
         }
-        
-        let tempRecordCount = recorder.getRecordings.count
-        var name = ""
-        if(tempRecordCount>0){
-            name = recorder.getRecordings[tempRecordCount-1] // FileName
+      
+        var audioData : Data? = nil
+        if (audioURL != nil){
+          audioData = try? Data(contentsOf: audioURL!)
         }
         
-        if(noteTitle != "" || noteDescription != "" ){
-            delegate?.updateNote(title: noteTitle, descrption: noteDescription, recording: name, currentDate : result , image: data)
+        if(noteTitle.isEmpty){
+            alertMessage(message: "Enter Note Title")
+        }else if (noteDescription.isEmpty){
+            alertMessage(message: "Enter Note Description")
+        }else{
+        delegate?.updateNote(title: noteTitle, descrption: noteDescription, recording: audioData, currentDate: result, image: data)
         }
-
         self.dismiss(animated: false, completion: nil)
         
     }
@@ -107,10 +96,74 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
         self.dismiss(animated: false, completion: nil)
     }
     
+    func alertMessage(message: String) {
+        let alert = UIAlertController(title: "Note App", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+       
+    }
+    
+    
+    // MARK:- --------------Audio Handling------------------
+    
+    @IBAction func onRecordClick(_ sender: UIButton) {
+    
+        if audioRecorder == nil {
+                startRecording()
+            sender.setImage(UIImage(named: "ic_stop.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            } else {
+                finishRecording(success: true)
+                sender.setImage(UIImage(named: "ic_add_audio.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            }
+    }
+    
+    func startRecording() {
+     
+        let audioFilename = getDocumentsDirectory().appendingPathComponent("recording.m4a")
+
+        let settings = [
+            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+            AVSampleRateKey: 12000,
+            AVNumberOfChannelsKey: 1,
+            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+        ]
+        do {
+            audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
+            audioRecorder.delegate = self
+            audioRecorder.record()
+
+            //recordButton.setTitle("Tap to Stop", for: .normal)
+        } catch {
+            finishRecording(success: false)
+        }
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        print("path for audio: \(paths[0])")
+        return paths[0]
+    }
+    
+    func finishRecording(success: Bool) {
+        audioRecorder.stop()
+        audioURL = audioRecorder?.url
+           
+        audioRecorder = nil
+       
+        
+    }
+    
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        if !flag {
+            finishRecording(success: false)
+        }
+    }
     
     
 }
 
+// MARK:- ------------------Image Handling -----------------------
 extension AddNoteVC: ImagePickerDelegate {
 
     func didSelect(image: UIImage?) {

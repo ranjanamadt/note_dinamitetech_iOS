@@ -8,6 +8,9 @@ import UIKit
 import CoreData
 
 class NotesVC: UITableViewController , addNote{
+  
+   
+   
    
 
     @IBOutlet weak var trashBtn: UIBarButtonItem!
@@ -111,7 +114,7 @@ class NotesVC: UITableViewController , addNote{
     
     /// update note in core data
     /// - Parameter title: note's title
-    func updateNote(title: String, descrption: String, recording: String, currentDate: String, image: String) {
+    func updateNote(title: String, descrption: String, recording: Data?, currentDate: String, image: String) {
         notes = []
         let newNote = Note(context: context)
         newNote.noteTitle = title

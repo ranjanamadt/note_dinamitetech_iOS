@@ -10,7 +10,7 @@ import CoreData
 import AVFoundation
 
 
-class NoteDetailViewController: UIViewController {
+class NoteDetailViewController: UIViewController,AVAudioPlayerDelegate {
     
     var selectedNote: Note?
     var delegate : addNote? = nil
@@ -19,8 +19,9 @@ class NoteDetailViewController: UIViewController {
     @IBOutlet weak var categoryTxt: UILabel!
     @IBOutlet weak var titleTxt: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-
-    var recorder = AudioRecorderHelper.shared
+    @IBOutlet weak var btnPlay: UIButton!
+    private var audioPlayer : AVAudioPlayer = AVAudioPlayer()
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,15 +37,31 @@ class NoteDetailViewController: UIViewController {
         let dataDecoded : Data = Data(base64Encoded: (selectedNote?.noteImage) ?? "", options: .ignoreUnknownCharacters)!
         let decodedimage = UIImage(data: dataDecoded)
         imageView.image = decodedimage
+        
+        
+        
+        if(selectedNote?.noteRecording == nil){
+            btnPlay.isHidden = true
+        }
     }
     
     @IBAction func cancel(_ sender: Any) {
-        recorder.stopPlaying()
+        if(audioPlayer.isPlaying){
+            audioPlayer.pause()
+        }
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func onPlayClick(_ sender: UIButton) {
-       // print(selectedNote?.noteRecording!)
-        recorder.play(name: (selectedNote?.noteRecording)!)
+      
+        audioPlayer.prepareToPlay()
+        do {
+            audioPlayer = try AVAudioPlayer(data: (selectedNote?.noteRecording)!)
+            audioPlayer.delegate = self
+            audioPlayer.play()  /// play
+            
+        } catch {
+            print("play(with name:), ",error.localizedDescription)
+        }
     }
 }
