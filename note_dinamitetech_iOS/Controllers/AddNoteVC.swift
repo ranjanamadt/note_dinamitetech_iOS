@@ -86,8 +86,9 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
             alertMessage(message: "Enter Note Description")
         }else{
         delegate?.updateNote(title: noteTitle, descrption: noteDescription, recording: audioData, currentDate: result, image: data)
+            self.dismiss(animated: false, completion: nil)
         }
-        self.dismiss(animated: false, completion: nil)
+      
         
     }
     
@@ -100,7 +101,7 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate {
         let alert = UIAlertController(title: "Note App", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
         alert.addAction(okAction)
-        present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
        
     }
     
