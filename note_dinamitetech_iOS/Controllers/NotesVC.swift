@@ -258,10 +258,6 @@ class NotesVC: UITableViewController , addNote{
     }
     
     
-
-    
-    
-    
     @IBAction func unwindToNoteTVC(_ unwindSegue: UIStoryboardSegue) {
 //        let sourceViewController = unwindSegue.source
         // Use data from the view controller which initiated the unwind segue
@@ -271,14 +267,6 @@ class NotesVC: UITableViewController , addNote{
     }
 }
     
-    
-    
-
-
-
-
-
-
 
 
 //MARK: - search bar delegate methods
@@ -289,7 +277,7 @@ extension NotesVC: UISearchBarDelegate {
     /// - Parameter searchBar: search bar is passed to this function
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         // add predicate
-        let predicate = NSPredicate(format: "noteTitle CONTAINS[cd] %@", searchBar.text!)
+        let predicate = NSPredicate(format: "noteTitle CONTAINS[cd] %@", searchBar.text!.capitalized)
         loadNotes(predicate: predicate,sortByDate: false, sortByTitle: false)
     }
     

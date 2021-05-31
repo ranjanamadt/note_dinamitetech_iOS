@@ -2,7 +2,6 @@
 //  imagePicker.swift
 //  note_dinamitetech_iOS
 //
-//  Created by Gulshan Bajwa on 28/05/21.
 //
 
 import Foundation

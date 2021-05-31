@@ -70,11 +70,7 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate , CLLocationManagerD
         longi = longitud
     }
     
-    @IBAction func onUploadImageClick(_ sender: Any) {
-        self.imagePicker = ImagePicker(presentationController: self, delegate: self)
-        self.imagePicker.present(from: sender as! UIView)
-        self.imagePickerButton.setImage(UIImage(named: ""), for: .normal)
-    }
+
    
    
     
@@ -172,7 +168,6 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate , CLLocationManagerD
     func finishRecording(success: Bool) {
         audioRecorder.stop()
         audioURL = audioRecorder?.url
-           
         audioRecorder = nil
        
         
@@ -182,6 +177,13 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate , CLLocationManagerD
         if !flag {
             finishRecording(success: false)
         }
+    }
+    
+    //MARK:-Upload Image click
+    @IBAction func onUploadImageClick(_ sender: Any) {
+        self.imagePicker = ImagePicker(presentationController: self, delegate: self)
+        self.imagePicker.present(from: sender as! UIView)
+        self.imagePickerButton.setImage(UIImage(named: ""), for: .normal)
     }
     
     
