@@ -26,21 +26,14 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate , CLLocationManagerD
     var delegate : addNote? = nil
 
     var selectedNote: Note?
-    var recordingSession: AVAudioSession!
+   
     var audioRecorder: AVAudioRecorder!
-    
-
-    var audioPlayer: AVAudioPlayer!
-    
     var locationManager = CLLocationManager()
    
     var lati = 0.0
     var longi = 0.0
 
   
-    
-    // timer to update my scrubber
-    var timer = Timer()
     // we need to access to the audio path
     var audioURL: URL? = nil
     
@@ -118,11 +111,7 @@ class AddNoteVC: UIViewController , AVAudioRecorderDelegate , CLLocationManagerD
             delegate?.updateNote(title: noteTitle, descrption: noteDescription, recording: audioData, currentDate: currentDate, image: imageData, latitude:lati, longitude:longi)
             
             self.dismiss(animated: false, completion: nil)
-            
-           
         }
-      
-        
     }
     
     
